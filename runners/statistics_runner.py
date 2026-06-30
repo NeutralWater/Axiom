@@ -2,6 +2,7 @@ from formulas import statistics
 from topic_lib import statistics_lib
 import math
 import formula_display.core as core
+import formula_display.display_statistics as fd
 
 def show_formula(formula):
     core.display_formula(formula)
@@ -16,7 +17,7 @@ def run_statistics():
         data_list = [float(x.strip()) for x in data.split(",")]
         print("")
         print(f"Mean = {statistics.mean(data_list)}")
-        show_formula(core.mean())
+        show_formula(fd.mean())
         print("")
 
     elif choice == "2":
@@ -24,7 +25,7 @@ def run_statistics():
         data_list = [float(x.strip()) for x in data.split(",")]
         print("")
         print(f"Range = {statistics.range_value(data_list)}")
-        show_formula(core.range())
+        show_formula(fd.range())
         print("")
 
     elif choice == "3":
@@ -33,7 +34,7 @@ def run_statistics():
         t = float(input("Time (years): "))
         print("")
         print(f"Simple Interest = ${statistics.simple_interest(p, r, t):.2f}")
-        show_formula(core.simple_interest())
+        show_formula(fd.simple_interest())
         print("")
 
     elif choice == "4":
@@ -43,7 +44,7 @@ def run_statistics():
         t = float(input("Time (years): "))
         print("")
         print(f"Final Amount = ${statistics.compound_interest(p, r, n, t):.2f}")
-        show_formula(core.compound_interest())
+        show_formula(fd.compound_interest())
         print("")
 
     elif choice == "0":

@@ -1,12 +1,10 @@
 from formulas import linear_algebra
 from topic_lib import linear_algebra_lib
-
-from formula_display.core import display_formula
-from formula_display import display_linear_algebra as fd
-
+import formula_display.display_linear_algebra as fd
+import formula_display.core as core
 
 def show_formula(formula):
-    display_formula(formula)
+    core.display_formula(formula)
 
 
 def get_vector(name):

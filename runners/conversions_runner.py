@@ -1,6 +1,7 @@
 from formulas import conversions
 from topic_lib import conversions_lib
 import math
+import formula_display.display_conversions as fd
 import formula_display.core as core
 
 def show_formula(formula):
@@ -15,14 +16,14 @@ def run_conversions():
         f = float(input("Fahrenheit: "))
         print("")
         print(f"Celsius = {conversions.fahrenheit_to_celsius(f)} °C")
-        show_formula(core.fahrenheit_to_celsius())
+        show_formula(fd.fahrenheit_to_celsius())
         print("")
     
     elif choice == "2":
         c = float(input("Celsius: "))
         print("")
         print(f"Fahrenheit = {conversions.celsius_to_fahrenheit(c)} °F")
-        show_formula(core.celsius_to_fahrenheit())
+        show_formula(fd.celsius_to_fahrenheit())
         print("")
     
     elif choice == "0":

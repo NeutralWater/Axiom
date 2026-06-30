@@ -2,6 +2,7 @@ from formulas import physics
 from topic_lib import physics_lib
 import math
 import formula_display.core as core
+import formula_display.display_physics as fd
 
 def show_formula(formula):
     core.display_formula(formula)
@@ -16,7 +17,7 @@ def run_physics():
         v = float(input("Velocity (m/s): "))
         print("")
         print(f"Kinetic Energy = {physics.kinetic_energy(m, v)} J")
-        show_formula(core.kinetic_energy())
+        show_formula(fd.kinetic_energy())
         print("")
     
     elif choice == "2":
@@ -24,7 +25,7 @@ def run_physics():
         a = float(input("Acceleration (m/s²): "))
         print("")
         print(f"Force = {physics.force(m, a)} N")
-        show_formula(core.force())
+        show_formula(fd.force())
         print("")
     
     elif choice == "3":
@@ -32,7 +33,7 @@ def run_physics():
         v = float(input("Velocity (m/s): "))
         print("")
         print(f"Momentum = {physics.momentum(m, v)} kg·m/s")
-        show_formula(core.momentum())
+        show_formula(fd.momentum())
         print("")
     
     elif choice == "4":
@@ -40,7 +41,7 @@ def run_physics():
         d = float(input("Distance (m): "))
         print("")
         print(f"Work = {physics.work(f, d)} J")
-        show_formula(core.work())
+        show_formula(fd.work())
     
     elif choice == "0":
         exit()
