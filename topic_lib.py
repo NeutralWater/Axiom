@@ -136,6 +136,7 @@ def constants_astronomical_lib():
 
 def conversions_lib():
     print("1. Fahrenheit to Celsius")
+    print("2. Celsius to Fahrenheit")
     
     print("")
     print("0. Exit")
@@ -145,6 +146,10 @@ def conversions_lib():
 def geometry_lib():
     print("1. Circle Area")
     print("2. Rectangle Area")
+    print("3. Triangle Area")
+    print("4. Circle Circumference")
+    print("5. Rectangle Perimeter")
+    print("6. Pythagorean Theorem")
 
     print("")
     print("0. Exit")
@@ -153,12 +158,20 @@ def geometry_lib():
 def physics_lib():
     print("1. Kinetic Energy")
     print("2. Force")
-    
+    print("3. Momentum")
+    print("4. Work")
+
+    print("")
     print("0. Exit")
     print("")
 
 def statistics_lib():
-    print("1. Compound Interest")
+    print("1. Mean")
+    print("2. Range Value")
+    print("3. Simple Interest")
+    print("4. Compound Interest")
+
+    print("")
     print("0. Exit")
     print("")
 

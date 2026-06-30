@@ -125,6 +125,41 @@ def run_calculus():
         print(f"Limit = {calculus.limit(expr, value)}")
         show_formula(formula_display.limit())
         print("")
+    
+    elif choice == "6":
+        expr = input("f(x) = ")
+        print("")
+        print(f"Critical Points = {calculus.critical_points(expr)}")
+        show_formula(formula_display.critical_points())
+        print("")
+    
+    elif choice == "7":
+        expr = input("f(x) = ")
+        a = float(input("Point of tangency: "))
+        print("")
+        print(f"Tangent Line = {calculus.tangent_line(expr, a)}")
+        show_formula(formula_display.tangent_line())
+        print("")
+    
+    elif choice == "8":
+        expr = input("f(x) = ")
+        a = float(input("Point of tangency: "))
+        print("")
+        normal_line = calculus.normal_line(expr, a)
+        if normal_line is None:
+            print("Normal line is undefined (slope is zero).")
+        else:
+            print(f"Normal Line = {normal_line}")
+            show_formula(formula_display.normal_line())
+        print("")
+
+    elif choice == "9":
+        expr = input("f(x) = ")
+        print("")
+        print(f"Power Rule: f'(x) = {calculus.power_rule(expr)}")
+        show_formula(formula_display.power_rule())
+        print("")
+    
 
 def run_constants():
     print("=== CONSTANTS ===")
@@ -141,6 +176,27 @@ def run_constants():
     elif choice == "4":
         constants_astronomical_lib()
 
+def run_conversions():
+    conversions_lib()
+    choice = input("Pick a conversion: ")
+    print("")
+
+    if choice == "1":
+        f = float(input("Fahrenheit: "))
+        print("")
+        print(f"Celsius = {conversions.fahrenheit_to_celsius(f)} °C")
+        show_formula(formula_display.fahrenheit_to_celsius())
+        print("")
+    
+    elif choice == "2":
+        c = float(input("Celsius: "))
+        print("")
+        print(f"Fahrenheit = {conversions.celsius_to_fahrenheit(c)} °F")
+        show_formula(formula_display.celsius_to_fahrenheit())
+        print("")
+    
+    elif choice == "0":
+        exit()
 
 def run_geometry():
     geometry_lib()
@@ -162,6 +218,108 @@ def run_geometry():
         show_formula(formula_display.rectangle_area())
         print("")
 
+    elif choice == "3":
+        b = float(input("Base: "))
+        h = float(input("Height: "))
+        print("")
+        print(f"Area = {geometry.triangle_area(b, h)}")
+        show_formula(formula_display.triangle_area())
+        print("")
+    
+    elif choice == "4":
+        r = float(input("Radius: "))
+        print("")
+        print(f"Circumference = {geometry.circle_circumference(r)}")
+        show_formula(formula_display.circle_circumference())
+        print("")
+    
+    elif choice == "5":
+        l = float(input("Length: "))
+        w = float(input("Width: "))
+        print("")
+        print(f"Perimeter = {geometry.rectangle_perimeter(l, w)}")
+        show_formula(formula_display.rectangle_perimeter())
+        print("")
+    
+    elif choice == "6":
+        a = float(input("Side a: "))
+        b = float(input("Side b: "))
+        print("")
+        print(f"Hypotenuse = {geometry.pythagorean(a, b)}")
+        show_formula(formula_display.pythagorean())
+        print("")
+    
+def run_physics():
+    physics_lib()
+    choice = input("Pick a formula: ")
+    print("")
+
+    if choice == "1":
+        m = float(input("Mass (kg): "))
+        v = float(input("Velocity (m/s): "))
+        print("")
+        print(f"Kinetic Energy = {physics.kinetic_energy(m, v)} J")
+        show_formula(formula_display.kinetic_energy())
+        print("")
+    
+    elif choice == "2":
+        m = float(input("Mass (kg): "))
+        a = float(input("Acceleration (m/s²): "))
+        print("")
+        print(f"Force = {physics.force(m, a)} N")
+        show_formula(formula_display.force())
+        print("")
+    
+    elif choice == "3":
+        m = float(input("Mass (kg): "))
+        v = float(input("Velocity (m/s): "))
+        print("")
+        print(f"Momentum = {physics.momentum(m, v)} kg·m/s")
+        show_formula(formula_display.momentum())
+        print("")
+    
+    elif choice == "4":
+        f = float(input("Force (N): "))
+        d = float(input("Distance (m): "))
+        print("")
+        print(f"Work = {physics.work(f, d)} J")
+        show_formula(formula_display.work())
+
+def run_statistics():
+    statistics_lib()
+    choice = input("Pick a formula: ")
+    print("")
+
+    if choice == "1":
+        data = input("Enter data (comma-separated): ")
+        data_list = [float(x.strip()) for x in data.split(",")]
+        print("")
+        print(f"Mean = {statistics.mean(data_list)}")
+        show_formula(formula_display.mean())
+        print("")
+    
+    elif choice == "2":
+        data = input("Enter data (comma-separated): ")
+        data_list = [float(x.strip()) for x in data.split(",")]
+        print("")
+        print(f"Median = {statistics.median(data_list)}")
+        show_formula(formula_display.median())
+        print("")
+    
+    elif choice == "3":
+        data = input("Enter data (comma-separated): ")
+        data_list = [float(x.strip()) for x in data.split(",")]
+        print("")
+        print(f"Mode = {statistics.mode(data_list)}")
+        show_formula(formula_display.mode())
+        print("")
+    
+    elif choice == "4":
+        data = input("Enter data (comma-separated): ")
+        data_list = [float(x.strip()) for x in data.split(",")]
+        print("")
+        print(f"Standard Deviation = {statistics.standard_deviation(data_list)}")
+        show_formula(formula_display.standard_deviation())
 
 def main():
     menu()
@@ -175,13 +333,13 @@ def main():
     elif choice == "3":
         run_constants()
     elif choice == "4":
-        conversions_lib()
+        run_conversions()
     elif choice == "5":
         run_geometry()
     elif choice == "6":
-        physics_lib()
+        run_physics()
     elif choice == "7":
-        statistics_lib()
+        run_statistics()
     elif choice == "0":
         exit()
     else:

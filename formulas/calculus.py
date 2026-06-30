@@ -52,3 +52,7 @@ def normal_line(expr, a):
 
     normal_m = -1 / m
     return sp.expand(normal_m * (x - a) + y1)
+
+def power_rule(expr):
+    expr = sp.sympify(expr)
+    return sp.diff(expr, x)

@@ -32,6 +32,17 @@ def display_formula(data):
 # ==========================
 # Algebra
 # ==========================
+def discriminant():
+    return make_formula(
+        "Δ = b² - 4ac",
+        {
+            "Δ": "discriminant",
+            "a": "quadratic coefficient",
+            "b": "linear coefficient",
+            "c": "constant term"
+        },
+        topic="Discriminant"
+    )
 
 def quadratic():
     return make_formula(
@@ -43,19 +54,6 @@ def quadratic():
             "c": "constant term"
         },
         topic="Quadratic Formula"
-    )
-
-
-def discriminant():
-    return make_formula(
-        "Δ = b² - 4ac",
-        {
-            "Δ": "discriminant",
-            "a": "quadratic coefficient",
-            "b": "linear coefficient",
-            "c": "constant term"
-        },
-        topic="Discriminant"
     )
 
 
@@ -135,6 +133,80 @@ def derivative():
         topic="Derivative"
     )
 
+def second_derivative():
+    return make_formula(
+        "d²/dx²[f(x)]",
+        {
+            "f(x)": "function",
+            "x": "variable",
+            "d²/dx²": "differentiate twice with respect to x"
+        },
+        topic="Second Derivative"
+    )
+
+def indefinite_integral():
+    return make_formula(
+        "∫f(x) dx",
+        {
+            "f(x)": "function being integrated",
+            "dx": "integrate with respect to x"
+        },
+        topic="Indefinite Integral"
+    )
+
+def definite_integral():
+    return make_formula(
+        "∫ₐᵇ f(x) dx",
+        {
+            "a": "lower bound",
+            "b": "upper bound",
+            "f(x)": "function being integrated"
+        },
+        topic="Definite Integral"
+    )
+
+def limit():
+    return make_formula(
+        "lim(x→a) f(x)",
+        {
+            "a": "value x approaches",
+            "f(x)": "function"
+        },
+        topic="Limit"
+    )
+
+def critical_points():
+    return make_formula(
+        "f'(x) = 0",
+        {
+            "f'(x)": "first derivative of the function",
+            "x": "variable"
+        },
+        topic="Critical Points"
+    )
+
+def tangent_line():
+    return make_formula(
+        "y - f(a) = f'(a)(x - a)",
+        {
+            "f(a)": "function value at point a",
+            "f'(a)": "derivative at point a",
+            "x, y": "coordinates on the tangent line",
+            "a": "point of tangency"
+        },
+        topic="Tangent Line"
+    )
+def normal_line():
+    return make_formula(
+        "y - f(a) = -1/f'(a)(x - a)",
+        {
+            "f(a)": "function value at point a",
+            "-1/f'(a)": "negative reciprocal of the derivative at point a",
+            "x, y": "coordinates on the normal line",
+            "a": "point of tangency"
+        },
+        topic="Normal Line"
+    )
 
 def power_rule():
     return make_formula(
@@ -157,34 +229,34 @@ def integral():
         topic="Indefinite Integral"
     )
 
+# ==========================
+# Converisons
+# ==========================
 
-def definite_integral():
+def fahrenheit_to_celsius():
     return make_formula(
-        "∫ₐᵇ f(x) dx",
+        "C = (F - 32) * 5/9",
         {
-            "a": "lower bound",
-            "b": "upper bound",
-            "f(x)": "function being integrated"
+            "C": "temperature in Celsius",
+            "F": "temperature in Fahrenheit"
         },
-        topic="Definite Integral"
+        units="°C",
+        topic="Fahrenheit to Celsius Conversion"
     )
 
-
-def limit():
+def celsius_to_fahrenheit():
     return make_formula(
-        "lim(x→a) f(x)",
+        "F = (C * 9/5) + 32",
         {
-            "a": "value x approaches",
-            "f(x)": "function"
+            "F": "temperature in Fahrenheit",
+            "C": "temperature in Celsius"
         },
-        topic="Limit"
+        units="°F",
+        topic="Celsius to Fahrenheit Conversion"
     )
-
-
 # ==========================
 # Geometry
 # ==========================
-
 def circle_area():
     return make_formula(
         "A = πr²",
@@ -195,20 +267,6 @@ def circle_area():
         units="square units",
         topic="Circle Area"
     )
-
-
-def circle_circumference():
-    return make_formula(
-        "C = 2πr",
-        {
-            "C": "circumference",
-            "r": "radius"
-        },
-        units="units",
-        topic="Circle Circumference"
-    )
-
-
 def rectangle_area():
     return make_formula(
         "A = lw",
@@ -220,8 +278,6 @@ def rectangle_area():
         units="square units",
         topic="Rectangle Area"
     )
-
-
 def triangle_area():
     return make_formula(
         "A = ½bh",
@@ -234,45 +290,110 @@ def triangle_area():
         topic="Triangle Area"
     )
 
+def circle_circumference():
+    return make_formula(
+        "C = 2πr",
+        {
+            "C": "circumference",
+            "r": "radius"
+        },
+        units="units",
+        topic="Circle Circumference"
+    )
+
+def rectangle_perimeter():
+    return make_formula(
+        "P = 2(l + w)",
+        {
+            "P": "perimeter",
+            "l": "length",
+            "w": "width"
+        },
+        units="units",
+        topic="Rectangle Perimeter"
+    )
+
+
+def pythagorean():
+    return make_formula(
+        "c = √(a² + b²)",
+        {
+            "a": "first leg",
+            "b": "second leg",
+            "c": "hypotenuse"
+        },
+        units="units",
+        topic="Pythagorean Theorem"
+    )
+
 
 # ==========================
 # Physics
 # ==========================
 
-def force():
+def work():
     return make_formula(
-        "F = ma",
+        "W = Fd",
         {
+            "W": "work",
             "F": "force",
-            "m": "mass",
-            "a": "acceleration"
-        },
-        units="newtons",
-        topic="Newton's Second Law"
-    )
-
-
-def kinetic_energy():
-    return make_formula(
-        "KE = ½mv²",
-        {
-            "KE": "kinetic energy",
-            "m": "mass",
-            "v": "velocity"
+            "d": "distance"
         },
         units="joules",
-        topic="Kinetic Energy"
+        topic="Work"
     )
 
 
-def momentum():
+# ==========================
+# Statistics
+# ==========================
+
+def mean():
     return make_formula(
-        "p = mv",
+        "Mean = Σx / n",
         {
-            "p": "momentum",
-            "m": "mass",
-            "v": "velocity"
+            "Σx": "sum of all values",
+            "n": "number of values"
         },
-        units="kg·m/s",
-        topic="Momentum"
+        topic="Arithmetic Mean"
+    )
+
+
+def range():
+    return make_formula(
+        "Range = Maximum − Minimum",
+        {
+            "Maximum": "largest value",
+            "Minimum": "smallest value"
+        },
+        topic="Range"
+    )
+
+
+def simple_interest():
+    return make_formula(
+        "I = Prt",
+        {
+            "I": "interest",
+            "P": "principal",
+            "r": "interest rate",
+            "t": "time"
+        },
+        units="currency",
+        topic="Simple Interest"
+    )
+
+
+def compound_interest():
+    return make_formula(
+        "A = P(1 + r/n)^(nt)",
+        {
+            "A": "final amount",
+            "P": "principal",
+            "r": "annual interest rate",
+            "n": "compounds per year",
+            "t": "time (years)"
+        },
+        units="currency",
+        topic="Compound Interest"
     )
