@@ -9,7 +9,7 @@ def show_formula(formula):
 def run_constants():
     print("=== CONSTANTS ===")
     constant_topic_lib()
-    choice = input("Pick a category: ")
+    choice = input("Select a category: ")
     print("")
 
     if choice == "1":

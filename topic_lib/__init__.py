@@ -8,3 +8,4 @@ from .geometry_lib import *
 from .physics_lib import *
 from .statistics_lib import *
 from .linear_algebra_lib import *
+from .chemistry_lib import *

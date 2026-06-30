@@ -9,7 +9,7 @@ def show_formula(formula):
 
 def run_statistics():
     statistics_lib()
-    choice = input("Pick a formula: ")
+    choice = input("Select a formula: ")
     print("")
 
     if choice == "1":

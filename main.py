@@ -22,6 +22,8 @@ def main():
         run_statistics()
     elif choice == "8":
         run_linear_algebra()
+    elif choice == "9":
+        run_chemistry()
     elif choice == "0":
         return
     else:

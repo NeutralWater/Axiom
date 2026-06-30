@@ -6,3 +6,4 @@ from .geometry_runner import run_geometry
 from .physics_runner import run_physics
 from .statistics_runner import run_statistics
 from .linear_algebra_runner import run_linear_algebra
+from .chemistry_runner import run_chemistry

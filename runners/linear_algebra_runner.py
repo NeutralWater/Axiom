@@ -25,7 +25,7 @@ def get_matrix(name):
 
 def run_linear_algebra():
     linear_algebra_lib()
-    choice = input("Pick a formula: ")
+    choice = input("Select a formula: ")
     print("")
 
     if choice == "1":

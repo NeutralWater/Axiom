@@ -9,7 +9,7 @@ def show_formula(formula):
 
 def run_conversions():
     conversions_lib()
-    choice = input("Pick a conversion: ")
+    choice = input("Select a conversion: ")
     print("")
 
     if choice == "1":

@@ -8,8 +8,8 @@ def show_formula(formula):
     core.display_formula(formula)
 
 def run_calculus():
-    calculus_lib()
-    choice = input("Pick a formula: ")
+    calculus_lib()    
+    choice = input("Select a formula: ")
     print("")
 
     if choice == "1":
