@@ -14,7 +14,6 @@ PLANCK_CONSTANT = 6.62607015e-34           # J·s
 G = 6.67430e-11                            # m³·kg⁻¹·s⁻²
 BOLTZMANN = 1.380649e-23                   # J/K
 
-
 # Planck Units
 PLANCK_LENGTH = 1.616255e-35               # m
 PLANCK_TIME = 5.391247e-44                 # s
@@ -28,3 +27,6 @@ HUBBLE_CONSTANT = 67.4                     # km/s/Mpc
 RYDBERG_CONSTANT = 10973731.568160         # m⁻¹
 FINE_STRUCTURE_CONSTANT = 7.2973525693e-3  # Dimensionless
 BOHR_RADIUS = 5.29177210903e-11            # m
+C = 299792458                   # m/s
+SIGMA = 5.670374419e-8          # W m^-2 K^-4
+WIEN = 2.897771955e-3           # m·K
