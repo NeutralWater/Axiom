@@ -9,3 +9,4 @@ from .physics_lib import *
 from .statistics_lib import *
 from .linear_algebra_lib import *
 from .chemistry_lib import *
+from .astronomy_lib import *

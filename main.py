@@ -24,6 +24,8 @@ def main():
         run_linear_algebra()
     elif choice == "9":
         run_chemistry()
+    elif choice == "10":
+        run_astronomy()
     elif choice == "0":
         return
     else:
