@@ -1,10 +1,10 @@
 from formulas import calculus
 from topic_lib import calculus_lib
 import math
-import formula_display
+import formula_display.formula_display_core as formula_display_core
 
 def show_formula(formula):
-    formula_display.display_formula(formula)
+    formula_display_core.display_formula(formula)
 
 def run_calculus():
     calculus_lib()
@@ -15,14 +15,14 @@ def run_calculus():
         expr = input("f(x) = ")
         print("")
         print(f"f'(x) = {calculus.derivative(expr)}")
-        show_formula(formula_display.derivative())
+        show_formula(formula_display_core.derivative())
         print("")
 
     elif choice == "2":
         expr = input("f(x) = ")
         print("")
         print(f"f''(x) = {calculus.second_derivative(expr)}")
-        show_formula(formula_display.derivative())
+        show_formula(formula_display_core.derivative())
         print("")
 
     
@@ -30,7 +30,7 @@ def run_calculus():
         expr = input("f(x) = ")
         print("")
         print(f"∫f(x) dx = {calculus.indefinite_integral(expr)} + C")
-        show_formula(formula_display.indefinite_integral())
+        show_formula(formula_display_core.indefinite_integral())
         print("")
     
     elif choice == "4":
@@ -39,7 +39,7 @@ def run_calculus():
         b = float(input("Upper bound: "))
         print("")
         print(f"Definite Integral = {calculus.definite_integral(expr, a, b)}")
-        show_formula(formula_display.definite_integral())
+        show_formula(formula_display_core.definite_integral())
         print("")
 
     elif choice == "5":
@@ -47,14 +47,14 @@ def run_calculus():
         value = input("x approaches: ")
         print("")
         print(f"Limit = {calculus.limit(expr, value)}")
-        show_formula(formula_display.limit())
+        show_formula(formula_display_core.limit())
         print("")
     
     elif choice == "6":
         expr = input("f(x) = ")
         print("")
         print(f"Critical Points = {calculus.critical_points(expr)}")
-        show_formula(formula_display.critical_points())
+        show_formula(formula_display_core.critical_points())
         print("")
     
     elif choice == "7":
@@ -62,7 +62,7 @@ def run_calculus():
         a = float(input("Point of tangency: "))
         print("")
         print(f"Tangent Line = {calculus.tangent_line(expr, a)}")
-        show_formula(formula_display.tangent_line())
+        show_formula(formula_display_core.tangent_line())
         print("")
     
     elif choice == "8":
@@ -74,14 +74,14 @@ def run_calculus():
             print("Normal line is undefined (slope is zero).")
         else:
             print(f"Normal Line = {normal_line}")
-            show_formula(formula_display.normal_line())
+            show_formula(formula_display_core.normal_line())
         print("")
 
     elif choice == "9":
         expr = input("f(x) = ")
         print("")
         print(f"Power Rule: f'(x) = {calculus.power_rule(expr)}")
-        show_formula(formula_display.power_rule())
+        show_formula(formula_display_core.power_rule())
         print("")
 
     elif choice == "0":

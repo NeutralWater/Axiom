@@ -1,4 +1,4 @@
-from formula_display import *
+from formula_display.formula_display_core import *
 
 def mean():
     return make_formula(

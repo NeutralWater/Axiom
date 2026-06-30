@@ -28,6 +28,8 @@ def main():
         run_physics()
     elif choice == "7":
         run_statistics()
+    elif choice == "8":
+        run_linear_algebra()
     elif choice == "0":
         exit()
     else:

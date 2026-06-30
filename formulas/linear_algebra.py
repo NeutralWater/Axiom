@@ -1,7 +1,18 @@
 import math
-import formula_display
 
-def show_formula(formula):
-    formula_display.display_formula(formula)
+def dot_product(v1, v2):
+    if len(v1) != len(v2):
+        return None
 
-def run_linear_algebra():
+    return sum(a * b for a, b in zip(v1, v2))
+
+def magnitude(v):
+    return math.sqrt(sum(x**2 for x in v))
+
+def unit_vector(v):
+    mag = magnitude(v)
+
+    if mag == 0:
+        return None
+
+    return [x / mag for x in v]
