@@ -1,10 +1,10 @@
 from topic_lib import constant_topic_lib, constants_mathematical_lib, constants_physical_lib, constants_planck_lib, constants_astronomical_lib
-import formula_display.formula_display_core as formula_display_core
+import formula_display.core as core
 
 def show_formula(formula):
-    formula_display_core.display_formula(formula)
+    core.display_formula(formula)
 def show_formula(formula):
-    formula_display_core.display_formula(formula)
+    core.display_formula(formula)
 
 def run_constants():
     print("=== CONSTANTS ===")

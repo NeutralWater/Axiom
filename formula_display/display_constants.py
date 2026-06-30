@@ -1,1 +1,1 @@
-from formula_display.formula_display_core import *
+from formula_display.core import *

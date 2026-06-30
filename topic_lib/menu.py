@@ -1,24 +1,52 @@
+from sysinfo import formula_count, module_count
+
+
 def menu():
-    print("╔══════════════════════════════════════════════╗")
-    print("║      MATHEMATICAL COMPUTATION TERMINAL       ║")
-    print("║               Version 1.0.0                  ║")
-    print("╠══════════════════════════════════════════════╣")
-    print("║ Status           : ONLINE                    ║")
-    print("║ Formula Modules  : 7 Loaded                  ║")
-    print("║ Constant Library : Loaded                    ║")
-    print("║ Formula Database : Ready                     ║")
-    print("╠══════════════════════════════════════════════╣")
-    print("║                                              ║")
-    print("║  [1] Algebra                                 ║")
-    print("║  [2] Calculus                                ║")
-    print("║  [3] Constants                               ║")
-    print("║  [4] Conversions                             ║")
-    print("║  [5] Geometry                                ║")
-    print("║  [6] Physics                                 ║")
-    print("║  [7] Statistics                              ║")
-    print("║  [8] Linear Algebra                          ║")
-    print("║                                              ║")
-    print("║  [0] Exit                                    ║")
-    print("║                                              ║")
-    print("╚══════════════════════════════════════════════╝")
-    print("")
+    width = 44
+
+    def border(left, middle, right):
+        print(left + middle * width + right)
+
+    def line(text=""):
+        print("║" + text[:width].ljust(width) + "║")
+
+    def centered(text):
+        print("║" + text[:width].center(width) + "║")
+
+    def row(label, value):
+        text = f"{label:<16}: {value}"
+        line(text)
+
+    border("╔", "═", "╗")
+    centered("MATHEMATICAL COMPUTATION TERMINAL")
+    centered("Version 1.0.0")
+    border("╠", "═", "╣")
+
+    row(" Status", "ONLINE")
+    row(" Formula Modules", f"{module_count()} Loaded")
+    row(" Total Formulas", f"{formula_count()} Available")
+    row(" Constant Library", "Loaded")
+    row(" Formula Database", "Ready")
+
+    border("╠", "═", "╣")
+    line()
+
+    modules = [
+        "Algebra",
+        "Calculus",
+        "Constants",
+        "Conversions",
+        "Geometry",
+        "Physics",
+        "Statistics",
+        "Linear Algebra",
+    ]
+
+    for i, module in enumerate(modules, start=1):
+        line(f" [{i}] {module}")
+
+    line()
+    line(" [0] Exit")
+    line()
+    border("╚", "═", "╝")
+    print()

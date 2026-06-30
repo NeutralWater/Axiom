@@ -1,4 +1,4 @@
-from formula_display.formula_display_core import make_formula
+from formula_display.core import make_formula
 
 def dot_product():
     return make_formula(

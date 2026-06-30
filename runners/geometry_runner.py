@@ -1,10 +1,10 @@
 from formulas import geometry
 from topic_lib import geometry_lib
 import math
-import formula_display.formula_display_core as formula_display_core
+import formula_display.core as core
 
 def show_formula(formula):
-    formula_display_core.display_formula(formula)
+    core.display_formula(formula)
 
 def run_geometry():
     geometry_lib()
@@ -15,7 +15,7 @@ def run_geometry():
         r = float(input("Radius: "))
         print("")
         print(f"Area of Circle = {geometry.circle_area(r)}")
-        show_formula(formula_display_core.circle_area())
+        show_formula(core.circle_area())
         print("")
     
     elif choice == "2":
@@ -23,7 +23,7 @@ def run_geometry():
         w = float(input("Width: "))
         print("")
         print(f"Area of Rectangle = {geometry.rectangle_area(l, w)}")
-        show_formula(formula_display_core.rectangle_area())
+        show_formula(core.rectangle_area())
         print("")
 
     elif choice == "3":
@@ -31,14 +31,14 @@ def run_geometry():
         h = float(input("Height: "))
         print("")
         print(f"Area of Triangle = {geometry.triangle_area(b, h)}")
-        show_formula(formula_display_core.triangle_area())
+        show_formula(core.triangle_area())
         print("")
 
     elif choice == "4":
         r = float(input("Radius: "))
         print("")
         print(f"Circumference of Circle = {geometry.circle_circumference(r)}")
-        show_formula(formula_display_core.circle_circumference())
+        show_formula(core.circle_circumference())
         print("")
 
     elif choice == "5":
@@ -46,7 +46,7 @@ def run_geometry():
         w = float(input("Width: "))
         print("")
         print(f"Perimeter of Rectangle = {geometry.rectangle_perimeter(l, w)}")
-        show_formula(formula_display_core.rectangle_perimeter())
+        show_formula(core.rectangle_perimeter())
         print("")
     
     elif choice == "6":
@@ -54,7 +54,7 @@ def run_geometry():
         b = float(input("Side b: "))
         print("")
         print(f"Hypotenuse = {geometry.pythagorean(a, b)}")
-        show_formula(formula_display_core.pythagorean())
+        show_formula(core.pythagorean())
         print("")
 
     #3d volumes
@@ -62,7 +62,7 @@ def run_geometry():
         r = float(input("Radius: "))
         print("")
         print(f"Volume of Sphere = {geometry.sphere_volume(r)}")
-        show_formula(formula_display_core.sphere_volume())
+        show_formula(core.sphere_volume())
         print("")
 
     elif choice == "8":
@@ -70,7 +70,7 @@ def run_geometry():
         h = float(input("Height: "))
         print("")
         print(f"Volume of Cylinder = {geometry.cylinder_volume(r, h)}")
-        show_formula(formula_display_core.cylinder_volume())
+        show_formula(core.cylinder_volume())
         print("")
     
     elif choice == "9":
@@ -78,7 +78,7 @@ def run_geometry():
         h = float(input("Height: "))
         print("")
         print(f"Volume of Cone = {geometry.cone_volume(r, h)}")
-        show_formula(formula_display_core.cone_volume())
+        show_formula(core.cone_volume())
         print("")
 
     elif choice == "10":
@@ -86,7 +86,7 @@ def run_geometry():
         h = float(input("Height: "))
         print("")
         print(f"Volume of Prism = {geometry.prism_volume(base_area, h)}")
-        show_formula(formula_display_core.prism_volume())
+        show_formula(core.prism_volume())
         print("")
     
     elif choice == "11":
@@ -94,7 +94,7 @@ def run_geometry():
         h = float(input("Height: "))
         print("")
         print(f"Volume of Pyramid = {geometry.pyramid_volume(base_area, h)}")
-        show_formula(formula_display_core.pyramid_volume())
+        show_formula(core.pyramid_volume())
         print("")
 
     elif choice == "12":
@@ -102,7 +102,7 @@ def run_geometry():
         r = float(input("Minor Radius: "))
         print("")
         print(f"Volume of Torus = {geometry.torus_volume(R, r)}")
-        show_formula(formula_display_core.torus_volume())
+        show_formula(core.torus_volume())
         print("")
 
     elif choice == "13":
@@ -111,7 +111,7 @@ def run_geometry():
         c = float(input("Semi-axis c: "))
         print("")
         print(f"Volume of Ellipsoid = {geometry.ellipsoid_volume(a, b, c)}")
-        show_formula(formula_display_core.ellipsoid_volume())
+        show_formula(core.ellipsoid_volume())
         print("")
 
     elif choice == "14":
@@ -120,7 +120,7 @@ def run_geometry():
         h = float(input("Height: "))
         print("")
         print(f"Volume of Frustum = {geometry.frustum_volume(r1, r2, h)}")
-        show_formula(formula_display_core.frustum_volume())
+        show_formula(core.frustum_volume())
         print("")
     
     #3d surface area
@@ -128,7 +128,7 @@ def run_geometry():
         r = float(input("Radius: "))
         print("")
         print(f"Surface Area of Sphere = {geometry.sphere_surface_area(r)}")
-        show_formula(formula_display_core.sphere_surface_area())
+        show_formula(core.sphere_surface_area())
         print("")
     
     elif choice == "16":
@@ -136,7 +136,7 @@ def run_geometry():
         h = float(input("Height: "))
         print("")
         print(f"Surface Area of Cylinder = {geometry.cylinder_surface_area(r, h)}")
-        show_formula(formula_display_core.cylinder_surface_area())
+        show_formula(core.cylinder_surface_area())
         print("")
     
     elif choice == "17":
@@ -144,7 +144,7 @@ def run_geometry():
         h = float(input("Height: "))
         print("")
         print(f"Surface Area of Cone = {geometry.cone_surface_area(r, h)}")
-        show_formula(formula_display_core.cone_surface_area())
+        show_formula(core.cone_surface_area())
         print("")
     elif choice == "18":
         base_perimeter = float(input("Base Perimeter: "))
@@ -152,7 +152,7 @@ def run_geometry():
         h = float(input("Height: "))
         print("")
         print(f"Surface Area of Prism = {geometry.prism_surface_area(base_perimeter, base_area, h)}")
-        show_formula(formula_display_core.prism_surface_area())
+        show_formula(core.prism_surface_area())
         print("")
 
     elif choice == "19":
@@ -161,7 +161,7 @@ def run_geometry():
         slant_height = float(input("Slant Height: "))
         print("")
         print(f"Surface Area of Pyramid = {geometry.pyramid_surface_area(base_perimeter, base_area, slant_height)}")
-        show_formula(formula_display_core.pyramid_surface_area())
+        show_formula(core.pyramid_surface_area())
         print("")
 
     elif choice == "20":
@@ -169,7 +169,7 @@ def run_geometry():
         r = float(input("Minor Radius: "))
         print("")
         print(f"Surface Area of Torus = {geometry.torus_surface_area(R, r)}")
-        show_formula(formula_display_core.torus_surface_area())
+        show_formula(core.torus_surface_area())
         print("")
 
     elif choice == "21":
@@ -178,7 +178,7 @@ def run_geometry():
         c = float(input("Semi-axis c: "))
         print("")
         print(f"Surface Area of Ellipsoid = {geometry.ellipsoid_surface_area(a, b, c)}")
-        show_formula(formula_display_core.ellipsoid_surface_area())
+        show_formula(core.ellipsoid_surface_area())
         print("")
 
     elif choice == "22":
@@ -187,7 +187,7 @@ def run_geometry():
         h = float(input("Height: "))
         print("")
         print(f"Surface Area of Frustum = {geometry.frustum_surface_area(r1, r2, h)}")
-        show_formula(formula_display_core.frustum_surface_area())
+        show_formula(core.frustum_surface_area())
         print("")
     
     

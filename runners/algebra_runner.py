@@ -1,10 +1,10 @@
 from formulas import algebra
 from topic_lib import algebra_lib
 import math
-import formula_display.formula_display_core as formula_display_core
+import formula_display.core as core
 
 def show_formula(formula):
-    formula_display_core.display_formula(formula)
+    core.display_formula(formula)
 
 def run_algebra():
     algebra_lib()
@@ -18,7 +18,7 @@ def run_algebra():
         print("")
 
         print(f"Discriminant = {algebra.discriminant(a, b, c)}")
-        show_formula(formula_display_core.discriminant())
+        show_formula(core.discriminant())
         print("")
 
     elif choice == "2":
@@ -39,7 +39,7 @@ def run_algebra():
             print(f"1st Root = {r[0]}")
             print(f"2nd Root = {r[1]}")
 
-        show_formula(formula_display_core.quadratic())
+        show_formula(core.quadratic())
         print("")
 
     elif choice == "3":
@@ -56,7 +56,7 @@ def run_algebra():
         else:
             print(f"Slope = {r}")
 
-        show_formula(formula_display_core.slope())
+        show_formula(core.slope())
         print("")
 
     elif choice == "4":
@@ -67,7 +67,7 @@ def run_algebra():
         print("")
 
         print(f"Midpoint = {algebra.midpoint(x1, y1, x2, y2)}")
-        show_formula(formula_display_core.midpoint())
+        show_formula(core.midpoint())
         print("")
 
     elif choice == "5":
@@ -78,5 +78,5 @@ def run_algebra():
         print("")
 
         print(f"Distance = {algebra.distance(x1, y1, x2, y2)}")
-        show_formula(formula_display_core.distance())
+        show_formula(core.distance())
         print("")

@@ -1,7 +1,7 @@
 from formulas import linear_algebra
 from topic_lib import linear_algebra_lib
 
-from formula_display.formula_display_core import display_formula
+from formula_display.core import display_formula
 from formula_display import display_linear_algebra as fd
 
 

@@ -1,10 +1,10 @@
 from formulas import physics
 from topic_lib import physics_lib
 import math
-import formula_display.formula_display_core as formula_display_core
+import formula_display.core as core
 
 def show_formula(formula):
-    formula_display_core.display_formula(formula)
+    core.display_formula(formula)
 
 def run_physics():
     physics_lib()
@@ -16,7 +16,7 @@ def run_physics():
         v = float(input("Velocity (m/s): "))
         print("")
         print(f"Kinetic Energy = {physics.kinetic_energy(m, v)} J")
-        show_formula(formula_display_core.kinetic_energy())
+        show_formula(core.kinetic_energy())
         print("")
     
     elif choice == "2":
@@ -24,7 +24,7 @@ def run_physics():
         a = float(input("Acceleration (m/s²): "))
         print("")
         print(f"Force = {physics.force(m, a)} N")
-        show_formula(formula_display_core.force())
+        show_formula(core.force())
         print("")
     
     elif choice == "3":
@@ -32,7 +32,7 @@ def run_physics():
         v = float(input("Velocity (m/s): "))
         print("")
         print(f"Momentum = {physics.momentum(m, v)} kg·m/s")
-        show_formula(formula_display_core.momentum())
+        show_formula(core.momentum())
         print("")
     
     elif choice == "4":
@@ -40,7 +40,7 @@ def run_physics():
         d = float(input("Distance (m): "))
         print("")
         print(f"Work = {physics.work(f, d)} J")
-        show_formula(formula_display_core.work())
+        show_formula(core.work())
     
     elif choice == "0":
         exit()
