@@ -49,9 +49,8 @@ Calc-Wiz/
 
 ---
 
-## Screenshots
+## Terminal Preview
 
-### Main Menu
 ```text
 ╔════════════════════════════════════════════╗
 ║     MATHEMATICAL COMPUTATION TERMINAL      ║
