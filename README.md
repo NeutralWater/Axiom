@@ -49,8 +49,9 @@ Calc-Wiz/
 
 ---
 
-### Main Menu
+## Terminal Preview
 
+```text
 ╔════════════════════════════════════════════╗
 ║     MATHEMATICAL COMPUTATION TERMINAL      ║
 ║               Version 1.0.0                ║
@@ -79,7 +80,7 @@ Calc-Wiz/
 ║ [0] Exit                                   ║
 ║                                            ║
 ╚════════════════════════════════════════════╝
-
+```
 ---
 
 ## Requirements
