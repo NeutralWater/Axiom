@@ -8,6 +8,10 @@ from formulas import (
     physics,
     statistics,
     linear_algebra,
+    chemistry,
+    astronomy,
+    computer_science,
+
 )
 
 MODULES = {
@@ -18,6 +22,9 @@ MODULES = {
     "Physics": physics,
     "Statistics": statistics,
     "Linear Algebra": linear_algebra,
+    "Chemistry": chemistry,
+    "Astronomy": astronomy,
+    "Computer Science": computer_science
 }
 
 

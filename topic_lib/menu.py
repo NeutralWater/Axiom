@@ -42,6 +42,7 @@ def menu():
         "Linear Algebra",
         "Chemistry",
         "Astronomy",
+        "Computer Science",
     ]
 
     for i, module in enumerate(modules, start=1):

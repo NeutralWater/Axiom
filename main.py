@@ -26,6 +26,8 @@ def main():
         run_chemistry()
     elif choice == "10":
         run_astronomy()
+    elif choice == "11":
+        run_computer_science()
     elif choice == "0":
         return
     else:

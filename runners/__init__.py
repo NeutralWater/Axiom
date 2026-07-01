@@ -8,3 +8,4 @@ from .statistics_runner import run_statistics
 from .linear_algebra_runner import run_linear_algebra
 from .chemistry_runner import run_chemistry
 from .astronomy_runner import run_astronomy
+from .computer_science_runner import run_computer_science

@@ -10,3 +10,4 @@ from .statistics_lib import *
 from .linear_algebra_lib import *
 from .chemistry_lib import *
 from .astronomy_lib import *
+from .computer_science_lib import *
