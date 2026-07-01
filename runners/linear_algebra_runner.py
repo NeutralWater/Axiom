@@ -3,13 +3,78 @@ from topic_lib import linear_algebra_lib
 import formula_display.display_linear_algebra as fd
 import formula_display.core as core
 
+from sympy import N, pretty
+from sympy.matrices import MatrixBase
+
+
 def show_formula(formula):
     core.display_formula(formula)
+
+
+def clean_value(value, digits=6):
+    if isinstance(value, float):
+        return round(value, digits)
+
+    if isinstance(value, MatrixBase):
+        return N(value, digits)
+
+    if isinstance(value, list):
+        return [clean_value(item, digits) for item in value]
+
+    if isinstance(value, tuple):
+        return tuple(clean_value(item, digits) for item in value)
+
+    if isinstance(value, dict):
+        return {
+            clean_value(key, digits): clean_value(val, digits)
+            for key, val in value.items()
+        }
+
+    try:
+        return N(value, digits)
+    except Exception:
+        return value
+
+
+def print_result(title, result):
+    result = clean_value(result)
+
+    print(f"{title}:")
+
+    if isinstance(result, MatrixBase):
+        print(pretty(result))
+        print("")
+        return
+
+    if isinstance(result, dict):
+        for key, value in result.items():
+            print(f"{key}: {value}")
+        print("")
+        return
+
+    if isinstance(result, (list, tuple)):
+        if len(result) == 0:
+            print("[]")
+            print("")
+            return
+
+        for i, item in enumerate(result, start=1):
+            if isinstance(item, MatrixBase):
+                print(f"{i}.")
+                print(pretty(item))
+            else:
+                print(f"{i}. {item}")
+        print("")
+        return
+
+    print(result)
+    print("")
 
 
 def get_vector(name):
     data = input(f"Enter {name} vector values (comma-separated): ")
     return [float(x.strip()) for x in data.split(",")]
+
 
 def get_vectors():
     count = int(input("Number of vectors: "))
@@ -19,6 +84,7 @@ def get_vectors():
         vectors.append(get_vector(f"vector {i + 1}"))
 
     return vectors
+
 
 def get_matrix(name):
     rows = int(input(f"Rows in {name}: "))
@@ -56,7 +122,7 @@ def run_linear_algebra():
         if result is None:
             print("Vectors must have the same number of components.")
         else:
-            print(f"Dot Product = {result}")
+            print_result("Dot Product", result)
 
         show_formula(fd.dot_product())
         print("")
@@ -64,7 +130,7 @@ def run_linear_algebra():
     elif choice == "2":
         v = get_vector("vector")
         print("")
-        print(f"Magnitude = {linear_algebra.magnitude(v)}")
+        print_result("Magnitude", linear_algebra.magnitude(v))
         show_formula(fd.magnitude())
         print("")
 
@@ -77,7 +143,7 @@ def run_linear_algebra():
         if result is None:
             print("The zero vector has no unit vector.")
         else:
-            print(f"Unit Vector = {result}")
+            print_result("Unit Vector", result)
 
         show_formula(fd.unit_vector())
         print("")
@@ -92,7 +158,7 @@ def run_linear_algebra():
         if result is None:
             print("Vectors must have the same number of components.")
         else:
-            print(f"Vector Sum = {result}")
+            print_result("Vector Sum", result)
 
         show_formula(fd.vector_addition())
         print("")
@@ -107,7 +173,7 @@ def run_linear_algebra():
         if result is None:
             print("Vectors must have the same number of components.")
         else:
-            print(f"Vector Difference = {result}")
+            print_result("Vector Difference", result)
 
         show_formula(fd.vector_subtraction())
         print("")
@@ -116,7 +182,7 @@ def run_linear_algebra():
         c = float(input("Scalar: "))
         v = get_vector("vector")
         print("")
-        print(f"Scalar Product = {linear_algebra.scalar_multiplication(c, v)}")
+        print_result("Scalar Product", linear_algebra.scalar_multiplication(c, v))
         show_formula(fd.scalar_multiplication())
         print("")
 
@@ -130,7 +196,7 @@ def run_linear_algebra():
         if result is None:
             print("Cross product only works for 3D vectors.")
         else:
-            print(f"Cross Product = {result}")
+            print_result("Cross Product", result)
 
         show_formula(fd.cross_product())
         print("")
@@ -145,7 +211,7 @@ def run_linear_algebra():
         if result is None:
             print("Matrices must have the same dimensions.")
         else:
-            print(f"Matrix Sum = {result}")
+            print_result("Matrix Sum", result)
 
         show_formula(fd.matrix_addition())
         print("")
@@ -160,7 +226,7 @@ def run_linear_algebra():
         if result is None:
             print("Matrices must have the same dimensions.")
         else:
-            print(f"Matrix Difference = {result}")
+            print_result("Matrix Difference", result)
 
         show_formula(fd.matrix_subtraction())
         print("")
@@ -175,7 +241,7 @@ def run_linear_algebra():
         if result is None:
             print("Columns of A must equal rows of B.")
         else:
-            print(f"Matrix Product = {result}")
+            print_result("Matrix Product", result)
 
         show_formula(fd.matrix_multiplication())
         print("")
@@ -183,7 +249,7 @@ def run_linear_algebra():
     elif choice == "11":
         A = get_matrix("A")
         print("")
-        print(f"Transpose = {linear_algebra.transpose(A)}")
+        print_result("Transpose", linear_algebra.transpose(A))
         show_formula(fd.transpose())
         print("")
 
@@ -196,7 +262,7 @@ def run_linear_algebra():
         if result is None:
             print("Determinant option only supports 2x2 matrices right now.")
         else:
-            print(f"Determinant = {result}")
+            print_result("Determinant", result)
 
         show_formula(fd.determinant_2x2())
         print("")
@@ -210,11 +276,11 @@ def run_linear_algebra():
         if result is None:
             print("Trace only works for square matrices.")
         else:
-            print(f"Trace = {result}")
+            print_result("Trace", result)
 
         show_formula(fd.trace())
         print("")
-    
+
     elif choice == "14":
         A = get_matrix("A")
         print("")
@@ -223,7 +289,7 @@ def run_linear_algebra():
         if result is None:
             print("Matrix must be square and invertible.")
         else:
-            print(f"Inverse = {result}")
+            print_result("Inverse", result)
 
         show_formula(fd.matrix_inverse())
         print("")
@@ -231,14 +297,14 @@ def run_linear_algebra():
     elif choice == "15":
         A = get_matrix("A")
         print("")
-        print(f"Rank = {linear_algebra.matrix_rank(A)}")
+        print_result("Rank", linear_algebra.matrix_rank(A))
         show_formula(fd.matrix_rank())
         print("")
 
     elif choice == "16":
         A = get_matrix("A")
         print("")
-        print(f"RREF = {linear_algebra.rref(A)}")
+        print_result("RREF", linear_algebra.rref(A))
         show_formula(fd.rref())
         print("")
 
@@ -250,7 +316,7 @@ def run_linear_algebra():
         if result is None:
             print("Determinant only works for square matrices.")
         else:
-            print(f"Determinant = {result}")
+            print_result("Determinant", result)
 
         show_formula(fd.determinant())
         print("")
@@ -264,7 +330,7 @@ def run_linear_algebra():
         if result is None:
             print("Vectors must have same dimensions and cannot be zero vectors.")
         else:
-            print(f"Angle = {result} degrees")
+            print_result("Angle (degrees)", result)
 
         show_formula(fd.angle_between_vectors())
         print("")
@@ -278,7 +344,7 @@ def run_linear_algebra():
         if result is None:
             print("Projection target cannot be the zero vector.")
         else:
-            print(f"Projection = {result}")
+            print_result("Projection", result)
 
         show_formula(fd.vector_projection())
         print("")
@@ -292,85 +358,149 @@ def run_linear_algebra():
         if result is None:
             print("Vectors must have the same number of components.")
         else:
-            print(f"Distance = {result}")
+            print_result("Distance", result)
 
         show_formula(fd.distance_between_vectors())
         print("")
-    
+
     elif choice == "21":
         A = get_matrix("A")
-        print(f"Eigenvalues = {linear_algebra.eigenvalues(A)}")
+        print("")
+        print_result("Eigenvalues", linear_algebra.eigenvalues(A))
         show_formula(fd.eigenvalues())
-
+        print("")
+    
     elif choice == "22":
         A = get_matrix("A")
-        print(f"Eigenvectors = {linear_algebra.eigenvectors(A)}")
+        print("")
+
+        result = linear_algebra.eigenvectors(A)
+
+        if result is None:
+            print("Unable to compute eigenvectors.")
+        else:
+            print("Eigenvectors:\n")
+
+            for i, item in enumerate(result, start=1):
+                eigenvalue = round(float(item["eigenvalue"]), 6)
+
+                print(f"Eigenvalue {i}: {eigenvalue}")
+                print(f"Multiplicity: {item['multiplicity']}")
+
+                for j, vec in enumerate(item["vectors"], start=1):
+                    print(f"Vector {j}:")
+
+                    values = [round(float(x), 6) for x in list(vec)]
+
+                    for value in values:
+                        print(f"[{value}]")
+
+                    print("")
+
         show_formula(fd.eigenvectors())
+        print("")
 
     elif choice == "23":
         A = get_matrix("A")
-        print(f"Characteristic Polynomial = {linear_algebra.characteristic_polynomial(A)}")
+        print("")
+        print_result("Characteristic Polynomial", linear_algebra.characteristic_polynomial(A))
         show_formula(fd.characteristic_polynomial())
+        print("")
 
     elif choice == "24":
         A = get_matrix("A")
-        print(f"Null Space = {linear_algebra.null_space(A)}")
+        print("")
+        print_result("Null Space", linear_algebra.null_space(A))
         show_formula(fd.null_space())
+        print("")
 
     elif choice == "25":
         A = get_matrix("A")
-        print(f"Column Space = {linear_algebra.column_space(A)}")
+        print("")
+        print_result("Column Space", linear_algebra.column_space(A))
         show_formula(fd.column_space())
+        print("")
 
     elif choice == "26":
         A = get_matrix("A")
-        print(f"Row Space = {linear_algebra.row_space(A)}")
+        print("")
+        print_result("Row Space", linear_algebra.row_space(A))
         show_formula(fd.row_space())
+        print("")
 
     elif choice == "27":
         vectors = get_vectors()
-        print(f"Gram-Schmidt Result = {linear_algebra.gram_schmidt(vectors)}")
+        print("")
+        print_result("Gram-Schmidt Result", linear_algebra.gram_schmidt(vectors))
         show_formula(fd.gram_schmidt())
+        print("")
 
     elif choice == "28":
         vectors = get_vectors()
-        print(f"Linearly Independent = {linear_algebra.linear_independence(vectors)}")
+        print("")
+        result = linear_algebra.linear_independence(vectors)
+
+        if result is None:
+            print("Could not determine linear independence.")
+        elif result:
+            print("The vectors are linearly independent.")
+        else:
+            print("The vectors are linearly dependent.")
+
         show_formula(fd.linear_independence())
+        print("")
 
     elif choice == "29":
         A = get_matrix("A")
-        print(f"LU Decomposition = {linear_algebra.lu_decomposition(A)}")
+        print("")
+        print_result("LU Decomposition", linear_algebra.lu_decomposition(A))
         show_formula(fd.lu_decomposition())
+        print("")
 
     elif choice == "30":
         A = get_matrix("A")
-        print(f"QR Decomposition = {linear_algebra.qr_decomposition(A)}")
+        print("")
+        print_result("QR Decomposition", linear_algebra.qr_decomposition(A))
         show_formula(fd.qr_decomposition())
+        print("")
 
     elif choice == "31":
         A = get_matrix("A")
-        print(f"Matrix Norm = {linear_algebra.matrix_norm(A)}")
+        print("")
+        print_result("Matrix Norm", linear_algebra.matrix_norm(A))
         show_formula(fd.matrix_norm())
+        print("")
 
     elif choice == "32":
         A = get_matrix("A")
-        print(f"Orthogonal = {linear_algebra.is_orthogonal(A)}")
+        print("")
+        print_result("Orthogonal", linear_algebra.is_orthogonal(A))
         show_formula(fd.orthogonal_matrix_check())
+        print("")
 
     elif choice == "33":
         A = get_matrix("A")
-        print(f"Symmetric = {linear_algebra.is_symmetric(A)}")
+        print("")
+        print_result("Symmetric", linear_algebra.is_symmetric(A))
         show_formula(fd.symmetric_matrix_check())
+        print("")
 
     elif choice == "34":
         A = get_matrix("A")
-        print(f"Skew-Symmetric = {linear_algebra.is_skew_symmetric(A)}")
+        print("")
+        print_result("Skew-Symmetric", linear_algebra.is_skew_symmetric(A))
         show_formula(fd.skew_symmetric_matrix_check())
+        print("")
 
     elif choice == "35":
         A = get_matrix("A")
-        print(f"Diagonalizable = {linear_algebra.is_diagonalizable(A)}")
+        print("")
+        print_result("Diagonalizable", linear_algebra.is_diagonalizable(A))
         show_formula(fd.diagonalization_check())
+        print("")
 
     elif choice == "0":
         exit()
+
+    else:
+        print("Invalid option.")

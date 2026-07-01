@@ -196,7 +196,17 @@ def eigenvalues(A):
 
 def eigenvectors(A):
     try:
-        return Matrix(A).eigenvects()
+        result = []
+
+        for value, mult, vectors in Matrix(A).eigenvects():
+            result.append({
+                "eigenvalue": value,
+                "multiplicity": mult,
+                "vectors": vectors
+            })
+
+        return result
+
     except:
         return None
 
