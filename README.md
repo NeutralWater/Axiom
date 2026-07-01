@@ -2,15 +2,18 @@
 
 A modular mathematical computation terminal built in Python.
 
-Calc Wiz provides quick access to formulas, constants, scientific calculations, and unit conversions through a simple terminal interface.
+Calc Wiz is a terminal-based STEM toolkit that provides quick access to mathematical formulas, engineering calculators, scientific constants, unit conversions, and digital electronics utilities through an organized modular interface.
 
 ---
 
 ## Features
 
 - 📚 10+ STEM modules
-- 🧮 150+ formulas
+- 🧮 150+ formulas and utilities
 - 📖 Built-in formula explanations
+- 🔢 Truth table generator
+- 🔲 2–6 variable Karnaugh map generator
+- 🧠 Boolean expression simplifier
 - 📐 Organized by subject
 - ⚡ Fast terminal interface
 - 🧩 Modular project structure
@@ -30,12 +33,16 @@ Calc Wiz provides quick access to formulas, constants, scientific calculations, 
 - Chemistry
 - Astronomy
 - Computer Science
-- etc
+- Electrical Engineering
+- Digital Electronics
+
+*More modules are planned.*
+
 ---
 
 ## Project Structure
 
-```
+```text
 Calc-Wiz/
 │
 ├── formulas/
@@ -44,7 +51,8 @@ Calc-Wiz/
 ├── runners/
 ├── main.py
 ├── menu.py
-└── sysinfo.py
+├── sysinfo.py
+└── README.md
 ```
 
 ---
@@ -57,7 +65,7 @@ Calc-Wiz/
 ║               Version 1.0.0                ║
 ╠════════════════════════════════════════════╣
 ║ Status         : ONLINE                    ║
-║ Formula Modules: 12 Loaded                 ║
+║ Formula Modules: 13 Loaded                 ║
 ║ Total Formulas : 152 Available             ║
 ║ Constant Library: Loaded                   ║
 ║ Formula Database: Ready                    ║
@@ -81,6 +89,7 @@ Calc-Wiz/
 ║                                            ║
 ╚════════════════════════════════════════════╝
 ```
+
 ---
 
 ## Requirements
@@ -88,7 +97,7 @@ Calc-Wiz/
 - Python 3.14+
 - SymPy
 
-Install dependencies:
+Install the required dependency:
 
 ```bash
 pip install sympy
@@ -104,28 +113,29 @@ python main.py
 
 ---
 
-## Example
+## Current Capabilities
 
-```
-MATHEMATICAL COMPUTATION TERMINAL
-Version 1.0.0
-
-Status              : ONLINE
-Formula Modules     : 10 Loaded
-Total Formulas      : 130 Available
-```
+- Mathematical and scientific formula library
+- Scientific constants reference
+- Unit conversions
+- Boolean expression simplification
+- Truth table generation
+- 2–6 variable Karnaugh map generation
+- Electrical engineering calculators
 
 ---
 
 ## Future Plans
 
-- More unit conversions
+- More STEM modules
+- Additional unit conversions
 - Finance module
-- Electrical Engineering module
-- Search formulas
+- Graphing support
+- Formula search
 - Favorites
 - Formula history
-- Graphing support
+- Circuit analysis tools
+- Matrix visualizations
 
 ---
 
