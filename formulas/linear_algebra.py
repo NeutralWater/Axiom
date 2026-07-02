@@ -296,3 +296,19 @@ def is_diagonalizable(A):
         return Matrix(A).is_diagonalizable()
     except:
         return None
+
+def system_of_equations(A, b):
+    try:
+        M = Matrix(A)
+        B = Matrix(b)
+
+        if M.rows != M.cols:
+            return None
+
+        if B.rows != M.rows:
+            return None
+
+        return M.LUsolve(B)
+
+    except:
+        return None

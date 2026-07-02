@@ -34,6 +34,7 @@ def linear_algebra_lib():
     print("33. Symmetric Matrix Check")
     print("34. Skew-Symmetric Matrix Check")
     print("35. Diagonalization Check")
+    print("36. System of Equations Solver (Gaussian Elimination) (n*n)")
 
     print("")
     print("0. Exit")

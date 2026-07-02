@@ -106,6 +106,33 @@ def get_matrix(name):
 
     return matrix
 
+def get_linear_system():
+    n = int(input("Number of variables/equations: "))
+
+    A = []
+    b = []
+
+    print("")
+
+    for i in range(n):
+        while True:
+            row = [float(x.strip()) for x in input(
+                f"Equation {i + 1} coefficients (comma-separated): "
+            ).split(",")]
+
+            if len(row) == n:
+                break
+
+            print(f"Please enter exactly {n} coefficients.")
+
+        constant = float(input(f"Equation {i + 1} constant: "))
+
+        A.append(row)
+        b.append(constant)
+
+        print("")
+
+    return A, b
 
 def run_linear_algebra():
     linear_algebra_lib()
@@ -499,8 +526,23 @@ def run_linear_algebra():
         show_formula(fd.diagonalization_check())
         print("")
 
+    elif choice == "36":
+        A, b = get_linear_system()
+        print("")
+
+        result = linear_algebra.system_of_equations(A, b)
+
+        if result is None:
+            print("System must be square and have one unique solution.")
+        else:
+            print_result("Solution", result)
+
+        show_formula(fd.systems_of_equations())
+        print("")
+
     elif choice == "0":
         exit()
 
     else:
         print("Invalid option.")
+

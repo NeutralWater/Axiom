@@ -422,3 +422,15 @@ def diagonalization_check():
         },
         topic="Diagonalization Check"
     )
+
+def systems_of_equations():
+    return make_formula(
+        "Ax = b",
+        {
+            "A": "coefficient matrix",
+            "x": "variable vector",
+            "b": "constant vector"
+        },
+        topic="System of Equations",
+        notes="Axiom solves square linear systems with one unique solution."
+    )
