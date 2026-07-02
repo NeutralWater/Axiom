@@ -95,3 +95,106 @@ def power_rule():
         },
         topic="Power Rule"
     )
+
+def increasing_decreasing():
+    return make_formula(
+        "f'(x) > 0,  f'(x) < 0",
+        {
+            "f'(x) > 0": "function is increasing",
+            "f'(x) < 0": "function is decreasing",
+            "x": "variable"
+        },
+        topic="Increasing / Decreasing Intervals"
+    )
+
+def concavity():
+    return make_formula(
+        "f''(x) > 0,  f''(x) < 0",
+        {
+            "f''(x) > 0": "concave up",
+            "f''(x) < 0": "concave down",
+            "x": "variable"
+        },
+        topic="Concavity"
+    )
+
+def inflection_points():
+    return make_formula(
+        "f''(x) = 0",
+        {
+            "f''(x)": "second derivative",
+            "x": "possible inflection point"
+        },
+        topic="Inflection Points"
+    )
+
+def average_value():
+    return make_formula(
+        "(1/(b-a)) ∫ₐᵇ f(x) dx",
+        {
+            "a": "lower bound",
+            "b": "upper bound",
+            "f(x)": "function",
+            "1/(b-a)": "average over the interval"
+        },
+        topic="Average Value of a Function"
+    )
+
+def area_between_curves():
+    return make_formula(
+        "∫ₐᵇ |f(x)-g(x)| dx",
+        {
+            "a": "lower bound",
+            "b": "upper bound",
+            "f(x)": "upper function",
+            "g(x)": "lower function"
+        },
+        topic="Area Between Curves"
+    )
+
+def arc_length():
+    return make_formula(
+        "∫ₐᵇ √(1 + [f'(x)]²) dx",
+        {
+            "a": "lower bound",
+            "b": "upper bound",
+            "f'(x)": "derivative of the function"
+        },
+        topic="Arc Length"
+    )
+
+def disk_volume():
+    return make_formula(
+        "π ∫ₐᵇ [f(x)]² dx",
+        {
+            "π": "pi",
+            "a": "lower bound",
+            "b": "upper bound",
+            "f(x)": "radius of the solid"
+        },
+        topic="Disk Method"
+    )
+
+def washer_volume():
+    return make_formula(
+        "π ∫ₐᵇ (R²-r²) dx",
+        {
+            "R": "outer radius",
+            "r": "inner radius",
+            "a": "lower bound",
+            "b": "upper bound"
+        },
+        topic="Washer Method"
+    )
+
+def newtons_method():
+    return make_formula(
+        "xₙ₊₁ = xₙ - f(xₙ)/f'(xₙ)",
+        {
+            "xₙ": "current approximation",
+            "xₙ₊₁": "next approximation",
+            "f(xₙ)": "function value",
+            "f'(xₙ)": "derivative at xₙ"
+        },
+        topic="Newton's Method"
+    )
