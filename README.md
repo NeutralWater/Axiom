@@ -1,15 +1,15 @@
-# 🧮 Axiom
+# Axiom v1.2.0
 
-A modular mathematical computation terminal built in Python.
+A modular STEM computation terminal built in Python.
 
-Calc Wiz is a terminal-based STEM toolkit that provides quick access to mathematical formulas, engineering calculators, scientific constants, unit conversions, and digital electronics utilities through an organized modular interface.
+Axiom is a terminal-based STEM toolkit that provides quick access to mathematical formulas, engineering calculators, scientific constants, unit conversions, and digital electronics utilities through an organized modular interface.
 
 ---
 
 ## Features
 
 - 📚 10+ STEM modules
-- 🧮 150+ formulas and utilities
+- 🧮 240+ STEM formulas and utilities
 - 📖 Built-in formula explanations
 - 🔢 Truth table generator
 - 🔲 2–6 variable Karnaugh map generator
@@ -62,8 +62,8 @@ Axiom/
 
 ```text
 ╔════════════════════════════════════════════╗
-║     MATHEMATICAL COMPUTATION TERMINAL      ║
-║               Version 1.0.0                ║
+║                   AXIOM                    ║
+║               Version 1.2.0                ║
 ╠════════════════════════════════════════════╣
 ║ Status         : ONLINE                    ║
 ║ Formula Modules: 13 Loaded                 ║
@@ -131,13 +131,13 @@ python main.py
 
 - More STEM modules
 - Additional unit conversions
-- Finance module
 - Graphing support
 - Formula search
 - Favorites
 - Formula history
 - Circuit analysis tools
 - Matrix visualizations
+- Finance module
 
 ---
 

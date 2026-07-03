@@ -18,8 +18,8 @@ def menu():
         line(text)
 
     border("╔", "═", "╗")
-    centered("MATHEMATICAL COMPUTATION TERMINAL")
-    centered("Version 1.0.0")
+    centered("AXIOM")
+    centered("Version 1.2.0")
     border("╠", "═", "╣")
 
     row(" Status", "ONLINE")
