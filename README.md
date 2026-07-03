@@ -43,7 +43,7 @@ Calc Wiz is a terminal-based STEM toolkit that provides quick access to mathemat
 ## Project Structure
 
 ```text
-Calc-Wiz/
+Axiom/
 │
 ├── formulas/
 ├── formula_display/
