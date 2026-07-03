@@ -34,6 +34,8 @@ def main():
         run_digital_electronics()
     elif choice == "14":
         run_aerospace_engineering()
+    elif choice == "15":
+        run_mechanical_engineering()
     elif choice == "0":
         return
     else:

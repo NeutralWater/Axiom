@@ -14,3 +14,4 @@ from .computer_science_lib import *
 from .electrical_engineering_lib import *
 from .digital_electronics_lib import *
 from .aerospace_engineering_lib import *
+from .mechanical_engineering_lib import *

@@ -6,10 +6,8 @@ import formula_display.core as core
 from sympy import N, pretty
 from sympy.matrices import MatrixBase
 
-
 def show_formula(formula):
     core.display_formula(formula)
-
 
 def clean_value(value, digits=6):
     if isinstance(value, float):
@@ -34,7 +32,6 @@ def clean_value(value, digits=6):
         return N(value, digits)
     except Exception:
         return value
-
 
 def print_result(title, result):
     result = clean_value(result)
@@ -75,7 +72,6 @@ def get_vector(name):
     data = input(f"Enter {name} vector values (comma-separated): ")
     return [float(x.strip()) for x in data.split(",")]
 
-
 def get_vectors():
     count = int(input("Number of vectors: "))
     vectors = []
@@ -84,7 +80,6 @@ def get_vectors():
         vectors.append(get_vector(f"vector {i + 1}"))
 
     return vectors
-
 
 def get_matrix(name):
     rows = int(input(f"Rows in {name}: "))
@@ -545,4 +540,3 @@ def run_linear_algebra():
 
     else:
         print("Invalid option.")
-

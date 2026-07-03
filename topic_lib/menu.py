@@ -46,6 +46,7 @@ def menu():
         "Electrical Engineering",
         "Digital Electronics",
         "Aerospace Engineering",
+        "Mechanical Engineering",
     ]
 
     for i, module in enumerate(modules, start=1):

@@ -14,6 +14,7 @@ from formula_display import (
     display_physics,
     display_statistics,
     display_aerospace_engineering,
+    display_mechanical_engineering,
 )
 
 
@@ -31,6 +32,7 @@ FORMULA_DISPLAY_MODULES = [
     display_physics,
     display_statistics,
     display_aerospace_engineering,
+    display_mechanical_engineering,
 ]
 
 

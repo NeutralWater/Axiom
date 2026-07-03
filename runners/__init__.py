@@ -12,3 +12,4 @@ from .computer_science_runner import run_computer_science
 from .electrical_engineering_runner import run_electrical_engineering
 from .digital_electronics_runner import run_digital_electronics
 from .aerospace_engineering_runner import run_aerospace_engineering
+from .mechanical_engineering_runner import run_mechanical_engineering
