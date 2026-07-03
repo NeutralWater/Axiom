@@ -9,7 +9,7 @@ Axiom is a terminal-based STEM toolkit that provides quick access to mathematica
 ## Features
 
 -  15+ STEM modules
--  240+ STEM formulas and utilities
+-  260+ STEM formulas and utilities
 -  Built-in formula explanations
 -  Truth table generator
 -  2–6 variable Karnaugh map generator
