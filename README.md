@@ -35,6 +35,7 @@ Calc Wiz is a terminal-based STEM toolkit that provides quick access to mathemat
 - Computer Science
 - Electrical Engineering
 - Digital Electronics
+- Aerospace Engineering
 
 *More modules are planned.*
 
@@ -66,7 +67,7 @@ Axiom/
 ╠════════════════════════════════════════════╣
 ║ Status         : ONLINE                    ║
 ║ Formula Modules: 13 Loaded                 ║
-║ Total Formulas : 152 Available             ║
+║ Total Formulas : 240 Available             ║
 ║ Constant Library: Loaded                   ║
 ║ Formula Database: Ready                    ║
 ╠════════════════════════════════════════════╣
@@ -84,6 +85,7 @@ Axiom/
 ║ [11] Computer Science                      ║
 ║ [12] Electrical Engineering                ║
 ║ [13] Digital Electronics                   ║
+║ [14] Aerospace Engineering                 ║
 ║                                            ║
 ║ [0] Exit                                   ║
 ║                                            ║

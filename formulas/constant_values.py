@@ -54,3 +54,10 @@ BOHR_RADIUS = 5.29177210903e-11            # m
 # Radiation Constants
 STEFAN_BOLTZMANN_CONSTANT = 5.670374419e-8 # W·m⁻²·K⁻⁴
 WIEN_CONSTANT = 2.897771955e-3             # m·K
+
+# Earth / Aerospace Constants
+EARTH_MASS = 5.9722e24                     # kg
+EARTH_RADIUS = 6371000                     # m
+EARTH_MU = 3.986004418e14                  # m³/s²
+STANDARD_AIR_DENSITY = 1.225               # kg/m³
+SPEED_OF_SOUND = 343                       # m/s

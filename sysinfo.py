@@ -13,6 +13,7 @@ from formula_display import (
     display_linear_algebra,
     display_physics,
     display_statistics,
+    display_aerospace_engineering,
 )
 
 
@@ -29,6 +30,7 @@ FORMULA_DISPLAY_MODULES = [
     display_linear_algebra,
     display_physics,
     display_statistics,
+    display_aerospace_engineering,
 ]
 
 
