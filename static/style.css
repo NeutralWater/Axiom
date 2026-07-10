@@ -1,0 +1,234 @@
+body {
+    background: #0f1117;
+    color: #f1f5f9;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 30px;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button {
+    background: #1f2937;
+    color: #f1f5f9;
+    border: 1px solid #374151;
+    border-radius: 10px;
+    padding: 12px 18px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #374151;
+}
+
+/* Navbar */
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 50px;
+}
+
+.nav-logo {
+    font-size: 22px;
+    font-weight: 800;
+    color: #f8fafc;
+}
+
+.nav-links {
+    display: flex;
+    gap: 22px;
+}
+
+.nav-links a {
+    color: #94a3b8;
+}
+
+.nav-links a:hover {
+    color: #3b82f6;
+}
+
+/* Homepage */
+
+.hero {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.hero h1 {
+    font-size: 64px;
+    margin-bottom: 5px;
+}
+
+.hero p {
+    color: #94a3b8;
+    font-size: 20px;
+}
+
+.tagline {
+    color: #64748b;
+    font-size: 16px;
+    margin-top: -8px;
+}
+
+.stats {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin: 25px 0;
+    flex-wrap: wrap;
+}
+
+.stats span {
+    background: #1f2937;
+    border: 1px solid #374151;
+    padding: 10px 14px;
+    border-radius: 999px;
+    color: #cbd5e1;
+}
+
+#searchBar {
+    width: min(600px, 90%);
+    padding: 15px 18px;
+    border-radius: 14px;
+    border: 1px solid #374151;
+    background: #111827;
+    color: #f8fafc;
+    font-size: 16px;
+    outline: none;
+}
+
+#searchBar:focus {
+    border-color: #3b82f6;
+}
+
+/* Module cards */
+
+.module-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 18px;
+}
+
+.module-card {
+    background: #1b2330;
+    border: 1px solid #374151;
+    border-radius: 18px;
+    padding: 24px;
+    transition: 0.2s ease;
+}
+
+.module-card:hover {
+    transform: translateY(-4px);
+    border-color: #3b82f6;
+    background: #202b3a;
+    box-shadow: 0 0 25px rgba(59, 130, 246, 0.2);
+}
+
+.module-card h2 {
+    margin-top: 0;
+}
+
+.module-card p {
+    color: #94a3b8;
+}
+
+.module-icon {
+    font-size: 32px;
+    margin-bottom: 12px;
+}
+
+/* About page */
+
+.about-page {
+    max-width: 850px;
+    margin: 80px auto;
+    line-height: 1.7;
+}
+
+.about-page h1 {
+    font-size: 48px;
+}
+
+.about-page p {
+    color: #cbd5e1;
+    font-size: 18px;
+}
+
+.about-card {
+    background: #1b2330;
+    border: 1px solid #374151;
+    border-radius: 18px;
+    padding: 24px;
+    margin-top: 30px;
+}
+
+/* Solver page */
+
+.solver-page {
+    width: 700px;
+    margin-top: 60px;
+}
+
+.solver-form {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-top: 25px;
+    flex-wrap: wrap;
+}
+
+.solver-form label {
+    color: #cbd5e1;
+}
+
+.solver-form input {
+    background: #111827;
+    color: #f8fafc;
+    border: 1px solid #374151;
+    border-radius: 10px;
+    padding: 12px;
+    font-size: 16px;
+}
+
+.solver-form input:focus {
+    outline: none;
+    border-color: #3b82f6;
+}
+
+.result-card,
+.error-card {
+    margin-top: 28px;
+}
+
+.result-card p {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.error-card {
+    color: #fca5a5;
+}
+
+.formula-info {
+    margin-top: 38px;
+}
+
+.formula-info h2 {
+    margin-top: 26px;
+    margin-bottom: 8px;
+}
+
+.formula-info p {
+    color: #cbd5e1;
+}
+
+.formula {
+    font-size: 26px;
+    font-weight: bold;
+    color: #f8fafc;
+}

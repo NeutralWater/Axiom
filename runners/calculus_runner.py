@@ -165,6 +165,13 @@ def run_calculus():
         print(f"Approximate Root = {calculus.newtons_method(expr, guess, iterations)}")
         show_formula(fd.newtons_method())
         print("")
+    
+    elif choice == "18":
+        expr = input("Function in x: ")
+        print("")
+        print(f"Power Rule: f'(x) = {calculus.power_rule(expr)}")
+        show_formula(fd.power_rule())
+        print("")
 
     elif choice == "0":
         exit()    

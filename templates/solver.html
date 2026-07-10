@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ solver.name }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+    <nav class="navbar">
+        <a class="nav-logo" href="/">Axiom</a>
+        <div class="nav-links">
+            <a href="/module/{{ module_id }}">Back</a>
+            <a href="/">Home</a>
+        </div>
+    </nav>
+
+    <main class="solver-page">
+        <h1>{{ solver.name }}</h1>
+
+        <form method="POST" class="solver-form">
+            {% for input in solver.inputs %}
+                <label>{{ input.label }}</label>
+                <input
+                    type="text"
+                    step="any"
+                    name="{{ input.name }}"
+                    required
+                    placeholder="Enter {{ input.label | lower }}"
+                >
+            {% endfor %}
+
+            <button type="submit">Calculate</button>
+        </form>
+
+        {% if result is not none %}
+            <div class="result-card">
+                <h2>Answer</h2>
+                <p>{{ result }}</p>
+            </div>
+        {% endif %}
+
+        {% if error %}
+            <div class="error-card">
+                <p>{{ error }}</p>
+            </div>
+        {% endif %}
+
+        <section class="formula-info">
+            <h2>Formula Used</h2>
+            <p class="formula">{{ formula }}</p>
+
+            <h2>Variables</h2>
+            {% for symbol, meaning in variables.items() %}
+                <p><strong>{{ symbol }}</strong> = {{ meaning }}</p>
+            {% endfor %}
+
+            <h2>Units</h2>
+            <p>{{ units }}</p>
+
+            <h2>Topic</h2>
+            <p>{{ topic }}</p>
+        </section>
+    </main>
+</body>
+</html>

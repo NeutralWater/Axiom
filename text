@@ -1,0 +1,28 @@
+what is fully loaded in:
+
+Aerospace Engineering, Algebra, Astronomy, Calculus, Chemistry, CS, Conversions, EE, Geometry, MechE, Physics
+
+what isnt:
+
+DE, LinAlg, Statistics, Constants isnt being counted
+
+what need to do:
+
+make a custom inserter for Lin Alg's matrix
+-have it ask users for size of matrix they want, and generate a matrix with those dimensions with input boxes,
+
+have a page for constant values,
+
+idk why stats isnt fully loading in,
+
+stats mean doesnt work correctly as you can only type one number in (does not allow commas) which means range probably wont work either
+
+DE isnt fully loading in either,
+
+can not type expressions in boxes for DE, boxes are just fully incorrect
+
+fix lin alg not fully loading in,
+
+can not type functions in the box for calculus,
+
+this is such a pain in my ass BOOOOO

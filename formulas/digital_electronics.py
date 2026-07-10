@@ -14,7 +14,7 @@ def simplify_boolean_expression(e):
     
     return s
 
-# from here to line 63 is all just to generate a truth table
+# from line 17 to line 63 is all just to generate a truth table
 def clean_boolean_variables(e):
     e = e.upper()
     e = e.replace("AND", "&")

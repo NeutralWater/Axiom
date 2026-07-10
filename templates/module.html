@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ module.name }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+    <nav class="navbar">
+        <a class="nav-logo" href="/">Axiom</a>
+        <div class="nav-links">
+            <a href="/">Home</a>
+        </div>
+    </nav>
+
+    <main class="solver-page">
+        <h1>{{ module.icon }} {{ module.name }}</h1>
+        <p>{{ module.description }}</p>
+
+        <div class="module-grid">
+            {% for solver_id, solver in solvers.items() %}
+                <a class="module-card" href="/solver/{{ module_id }}/{{ solver_id }}">
+                    <h2>{{ solver.name }}</h2>
+                    <p>{{ solver.formula }}</p>
+                </a>
+            {% endfor %}
+        </div>
+    </main>
+</body>
+</html>

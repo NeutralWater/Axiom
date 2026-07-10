@@ -16,6 +16,7 @@ def calculus_lib():
     print("15. Disk Volume")
     print("16. Washer Volume")
     print("17. Newton's Method")
+    print("18. Power Rule")
 
     print("")
     print("0. Exit")

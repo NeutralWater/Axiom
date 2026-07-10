@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Axiom</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+    <nav class="navbar">
+        <a class="nav-logo" href="/">Axiom</a>
+        <div class="nav-links">
+            <a href="https://github.com/NeutralWater/Axiom" target="_blank">GitHub</a>
+            <a href="/about">About</a>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <h1>Axiom</h1>
+        <p>The Offline STEM Toolkit</p>
+        <p class="tagline">Engineering starts with mathematics.</p>
+
+        <input 
+            type="text" 
+            id="searchBar" 
+            placeholder="Search formulas, constants, modules..."
+        >
+
+        <div class="stats">
+            <span>260+ formulas</span>
+            <span>15 STEM modules</span>
+            <span>Local • No WiFi Required</span>
+        </div>
+    </header>
+
+    <main class="module-grid">
+        {% for module_id, module in modules.items() %}
+            <a class="module-card" href="/module/{{ module_id }}">
+                <div class="module-icon">{{ module.icon }}</div>
+                <h2>{{ module.name }}</h2>
+                <p>{{ module.description }}</p>
+            </a>
+        {% endfor %}
+    </main>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
