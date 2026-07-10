@@ -39,15 +39,24 @@ def input_definition(module_id, parameter_name, parameter):
 
     if parameter_name in TEXT_PARAMETERS.get(module_id, set()):
         input_type = "text"
-        placeholder = "Example: x^2 + 3*x"
+
+        if module_id == "calculus":
+            placeholder = "Example: x^2 + 3*x"
+
+        elif module_id == "digital_electronics":
+            placeholder = "Example: (A AND B) OR NOT C"
+
     elif parameter_name in MATRIX_PARAMETERS.get(module_id, set()):
         input_type = "matrix"
+
     elif parameter_name in VECTOR_SET_PARAMETERS.get(module_id, set()):
         input_type = "vectors"
         placeholder = "Example: 1, 0; 0, 1"
+
     elif parameter_name in VECTOR_PARAMETERS.get(module_id, set()):
         input_type = "vector"
         placeholder = "Example: 1, 2, 3"
+
     elif parameter_name in INTEGER_PARAMETERS:
         input_type = "integer"
 
