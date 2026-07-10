@@ -378,7 +378,7 @@ def matrix_norm():
     )
 
 
-def orthogonal_matrix_check():
+def is_orthogonal():
     return make_formula(
         "AᵀA = I",
         {
@@ -390,7 +390,7 @@ def orthogonal_matrix_check():
     )
 
 
-def symmetric_matrix_check():
+def is_symmetric():
     return make_formula(
         "A = Aᵀ",
         {
@@ -401,7 +401,7 @@ def symmetric_matrix_check():
     )
 
 
-def skew_symmetric_matrix_check():
+def is_skew_symmetric():
     return make_formula(
         "Aᵀ = -A",
         {
@@ -412,7 +412,7 @@ def skew_symmetric_matrix_check():
     )
 
 
-def diagonalization_check():
+def is_diagonalizable():
     return make_formula(
         "A = PDP⁻¹",
         {
@@ -423,7 +423,7 @@ def diagonalization_check():
         topic="Diagonalization Check"
     )
 
-def systems_of_equations():
+def system_of_equations():
     return make_formula(
         "Ax = b",
         {

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Constants | Axiom</title>
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='style.css') }}"
+    >
+</head>
+
+<body>
+    <nav class="navbar">
+        <a class="nav-logo" href="/">Axiom</a>
+
+        <div class="nav-links">
+            <a href="/">Home</a>
+        </div>
+    </nav>
+
+    <main class="constants-page">
+        <h1>Constants</h1>
+
+        <p class="page-description">
+            Mathematical, scientific, and engineering reference values.
+        </p>
+
+        <input
+            type="text"
+            id="constantSearch"
+            placeholder="Search names, symbols, values, or units..."
+        >
+
+        {% for group in groups %}
+            <section class="constant-group">
+                <h2>{{ group.category }}</h2>
+
+                <div class="constant-table-wrap">
+                    <table class="constant-table">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Symbol</th>
+                                <th>Value</th>
+                                <th>Units</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            {% for constant in group.constants %}
+                                <tr class="constant-row">
+                                    <td>{{ constant.name }}</td>
+                                    <td>{{ constant.symbol }}</td>
+                                    <td>
+                                        <code>{{ constant.value }}</code>
+                                    </td>
+                                    <td>
+                                        {{ constant.units or "—" }}
+                                    </td>
+                                </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        {% endfor %}
+    </main>
+
+    <script>
+        const search = document.getElementById("constantSearch");
+
+        search.addEventListener("input", () => {
+            const query = search.value.toLowerCase();
+
+            document.querySelectorAll(".constant-row").forEach(row => {
+                const matches = row.innerText
+                    .toLowerCase()
+                    .includes(query);
+
+                row.hidden = !matches;
+            });
+
+            document.querySelectorAll(".constant-group").forEach(group => {
+                const rows = [
+                    ...group.querySelectorAll(".constant-row")
+                ];
+
+                group.hidden = !rows.some(row => !row.hidden);
+            });
+        });
+    </script>
+</body>
+</html>

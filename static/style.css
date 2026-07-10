@@ -170,7 +170,7 @@ button:hover {
 /* Solver page */
 
 .solver-page {
-    width: 700px;
+    width: min(900px, 100%);
     margin-top: 60px;
 }
 
@@ -180,6 +180,58 @@ button:hover {
     gap: 14px;
     margin-top: 25px;
     flex-wrap: wrap;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 7px;
+    width: 100%;
+}
+
+.input-group > input {
+    width: min(520px, calc(100% - 26px));
+}
+
+.input-group small,
+.page-description {
+    color: #94a3b8;
+}
+
+.matrix-builder {
+    width: 100%;
+}
+
+.matrix-size-controls {
+    display: flex;
+    gap: 12px;
+    align-items: end;
+    flex-wrap: wrap;
+}
+
+.matrix-size-controls label {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.matrix-size-controls input {
+    width: 72px;
+}
+
+.matrix-grid {
+    display: grid;
+    gap: 8px;
+    margin-top: 14px;
+    width: fit-content;
+    max-width: 100%;
+    overflow-x: auto;
+}
+
+.matrix-grid .matrix-cell {
+    width: 64px;
+    box-sizing: border-box;
 }
 
 .solver-form label {
@@ -205,9 +257,12 @@ button:hover {
     margin-top: 28px;
 }
 
-.result-card p {
+.result-card pre {
     font-size: 24px;
     font-weight: bold;
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+    font-family: inherit;
 }
 
 .error-card {
@@ -231,4 +286,60 @@ button:hover {
     font-size: 26px;
     font-weight: bold;
     color: #f8fafc;
+}
+
+/* Constants */
+
+.constants-page {
+    max-width: 1050px;
+    margin: 0 auto;
+}
+
+#constantSearch {
+    width: min(600px, calc(100% - 36px));
+    padding: 15px 18px;
+    border-radius: 14px;
+    border: 1px solid #374151;
+    background: #111827;
+    color: #f8fafc;
+    font-size: 16px;
+    outline: none;
+    margin: 14px 0 28px;
+}
+
+.constant-group {
+    margin: 30px 0;
+}
+
+.constant-table-wrap {
+    overflow-x: auto;
+    border: 1px solid #374151;
+    border-radius: 14px;
+}
+
+.constant-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #1b2330;
+}
+
+.constant-table th,
+.constant-table td {
+    padding: 14px 16px;
+    text-align: left;
+    border-bottom: 1px solid #374151;
+}
+
+.constant-table th {
+    color: #94a3b8;
+    background: #111827;
+}
+
+.constant-table tr:last-child td {
+    border-bottom: 0;
+}
+
+@media (max-width: 640px) {
+    body { padding: 18px; }
+    .hero h1 { font-size: 48px; }
 }

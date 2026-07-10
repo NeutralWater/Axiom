@@ -2,27 +2,32 @@ from sympy import symbols
 from sympy.logic.boolalg import *
 from sympy.parsing.sympy_parser import * 
 import itertools
+import re
+
+
+def normalize_boolean_expression(expression):
+    expression = expression.upper()
+    replacements = {
+        "XOR": "^",
+        "AND": "&",
+        "NOT": "~",
+        "OR": "|",
+    }
+    for word, operator in replacements.items():
+        expression = re.sub(rf"\b{word}\b", operator, expression)
+    return expression
 
 def simplify_boolean_expression(e):
-    e = e.replace("AND", "&")
-    e = e.replace("OR", "|")
-    e = e.replace("NOT", "~")
-    e = e.replace("XOR", "^")
+    e = normalize_boolean_expression(e)
     
-    p = parse_expr(e, evaluate=False)
+    p = parse_expr(e, evaluate=True)
     s = simplify_logic(p, form="cnf")
     
     return s
 
 # from line 17 to line 63 is all just to generate a truth table
 def clean_boolean_variables(e):
-    e = e.upper()
-    e = e.replace("AND", "&")
-    e = e.replace("OR", "|")
-    e = e.replace("NOT", "~")
-    e = e.replace("XOR", "^")
-    
-    return e
+    return normalize_boolean_expression(e)
 
 def get_boolean_variables(e):
     c = clean_boolean_variables(e)
@@ -35,7 +40,7 @@ def generate_truth_table(e):
     v = get_boolean_variables(c)
     
     symbol_map = {var: symbols(var) for var in v}
-    p = parse_expr(c, local_dict=symbol_map, evaluate=False)
+    p = parse_expr(c, local_dict=symbol_map, evaluate=True)
 
     rows = []
     for values in itertools.product([False, True], repeat=len(v)):

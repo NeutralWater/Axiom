@@ -61,3 +61,240 @@ EARTH_RADIUS = 6371000                     # m
 EARTH_MU = 3.986004418e14                  # m³/s²
 STANDARD_AIR_DENSITY = 1.225               # kg/m³
 SPEED_OF_SOUND = 343                       # m/s
+
+CONSTANT_GROUPS = [
+    {
+        "category": "Mathematical",
+        "constants": [
+            {"name": "Pi", "symbol": "π", "value": PI, "units": ""},
+            {"name": "Euler's number", "symbol": "e", "value": E, "units": ""},
+            {"name": "Golden ratio", "symbol": "φ", "value": PHI, "units": ""},
+            {"name": "Tau", "symbol": "τ", "value": TAU, "units": ""},
+        ],
+    },
+    {
+        "category": "Mechanics",
+        "constants": [
+            {
+                "name": "Standard gravity",
+                "symbol": "g",
+                "value": GRAVITY,
+                "units": "m/s²",
+            },
+        ],
+    },
+    {
+        "category": "Physical",
+        "constants": [
+            {
+                "name": "Speed of light",
+                "symbol": "c",
+                "value": SPEED_OF_LIGHT,
+                "units": "m/s",
+            },
+            {
+                "name": "Planck constant",
+                "symbol": "h",
+                "value": PLANCK_CONSTANT,
+                "units": "J·s",
+            },
+            {
+                "name": "Gravitational constant",
+                "symbol": "G",
+                "value": GRAVITATIONAL_CONSTANT,
+                "units": "m³·kg⁻¹·s⁻²",
+            },
+            {
+                "name": "Boltzmann constant",
+                "symbol": "k",
+                "value": BOLTZMANN_CONSTANT,
+                "units": "J/K",
+            },
+        ],
+    },
+    {
+        "category": "Electricity",
+        "constants": [
+            {
+                "name": "Coulomb constant",
+                "symbol": "kₑ",
+                "value": COULOMBS_CONSTANT,
+                "units": "N·m²/C²",
+            },
+            {
+                "name": "Elementary charge",
+                "symbol": "e",
+                "value": ELEMENTARY_CHARGE,
+                "units": "C",
+            },
+            {
+                "name": "Vacuum permittivity",
+                "symbol": "ε₀",
+                "value": VACUUM_PERMITTIVITY,
+                "units": "F/m",
+            },
+            {
+                "name": "Vacuum permeability",
+                "symbol": "μ₀",
+                "value": VACUUM_PERMEABILITY,
+                "units": "N/A²",
+            },
+        ],
+    },
+    {
+        "category": "Chemistry",
+        "constants": [
+            {
+                "name": "Avogadro constant",
+                "symbol": "Nₐ",
+                "value": AVOGADRO_CONSTANT,
+                "units": "mol⁻¹",
+            },
+            {
+                "name": "Gas constant",
+                "symbol": "R",
+                "value": GAS_CONSTANT,
+                "units": "J/(mol·K)",
+            },
+            {
+                "name": "Faraday constant",
+                "symbol": "F",
+                "value": FARADAY_CONSTANT,
+                "units": "C/mol",
+            },
+        ],
+    },
+    {
+        "category": "Planck units",
+        "constants": [
+            {
+                "name": "Planck length",
+                "symbol": "lₚ",
+                "value": PLANCK_LENGTH,
+                "units": "m",
+            },
+            {
+                "name": "Planck time",
+                "symbol": "tₚ",
+                "value": PLANCK_TIME,
+                "units": "s",
+            },
+            {
+                "name": "Planck mass",
+                "symbol": "mₚ",
+                "value": PLANCK_MASS,
+                "units": "kg",
+            },
+        ],
+    },
+    {
+        "category": "Astronomical",
+        "constants": [
+            {
+                "name": "Astronomical unit",
+                "symbol": "AU",
+                "value": ASTRONOMICAL_UNIT,
+                "units": "m",
+            },
+            {
+                "name": "Light-year",
+                "symbol": "ly",
+                "value": LIGHT_YEAR,
+                "units": "m",
+            },
+            {
+                "name": "Parsec",
+                "symbol": "pc",
+                "value": PARSEC,
+                "units": "m",
+            },
+            {
+                "name": "Hubble constant",
+                "symbol": "H₀",
+                "value": HUBBLE_CONSTANT,
+                "units": "km/s/Mpc",
+            },
+        ],
+    },
+    {
+        "category": "Atomic",
+        "constants": [
+            {
+                "name": "Rydberg constant",
+                "symbol": "R∞",
+                "value": RYDBERG_CONSTANT,
+                "units": "m⁻¹",
+            },
+            {
+                "name": "Fine-structure constant",
+                "symbol": "α",
+                "value": FINE_STRUCTURE_CONSTANT,
+                "units": "dimensionless",
+            },
+            {
+                "name": "Bohr radius",
+                "symbol": "a₀",
+                "value": BOHR_RADIUS,
+                "units": "m",
+            },
+        ],
+    },
+    {
+        "category": "Radiation",
+        "constants": [
+            {
+                "name": "Stefan–Boltzmann constant",
+                "symbol": "σ",
+                "value": STEFAN_BOLTZMANN_CONSTANT,
+                "units": "W·m⁻²·K⁻⁴",
+            },
+            {
+                "name": "Wien displacement constant",
+                "symbol": "b",
+                "value": WIEN_CONSTANT,
+                "units": "m·K",
+            },
+        ],
+    },
+    {
+        "category": "Earth / Aerospace",
+        "constants": [
+            {
+                "name": "Earth mass",
+                "symbol": "M⊕",
+                "value": EARTH_MASS,
+                "units": "kg",
+            },
+            {
+                "name": "Earth radius",
+                "symbol": "R⊕",
+                "value": EARTH_RADIUS,
+                "units": "m",
+            },
+            {
+                "name": "Earth gravitational parameter",
+                "symbol": "μ",
+                "value": EARTH_MU,
+                "units": "m³/s²",
+            },
+            {
+                "name": "Standard air density",
+                "symbol": "ρ₀",
+                "value": STANDARD_AIR_DENSITY,
+                "units": "kg/m³",
+            },
+            {
+                "name": "Speed of sound",
+                "symbol": "a",
+                "value": SPEED_OF_SOUND,
+                "units": "m/s",
+            },
+        ],
+    },
+]
+
+
+CONSTANT_COUNT = sum(
+    len(group["constants"])
+    for group in CONSTANT_GROUPS
+)

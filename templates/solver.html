@@ -19,14 +19,33 @@
 
         <form method="POST" class="solver-form">
             {% for input in solver.inputs %}
-                <label>{{ input.label }}</label>
-                <input
-                    type="text"
-                    step="any"
-                    name="{{ input.name }}"
-                    required
-                    placeholder="Enter {{ input.label | lower }}"
-                >
+                <div class="input-group">
+                    <label for="{{ input.name }}">{{ input.label }}</label>
+                    {% if input.type == "matrix" %}
+                        <div class="matrix-builder" data-name="{{ input.name }}">
+                            <div class="matrix-size-controls">
+                                <label>Rows <input class="matrix-rows" type="number" min="1" max="10" value="2"></label>
+                                <label>Columns <input class="matrix-cols" type="number" min="1" max="10" value="2"></label>
+                                <button class="generate-matrix" type="button">Generate matrix</button>
+                            </div>
+                            <div class="matrix-grid"></div>
+                            <input class="matrix-value" type="hidden" name="{{ input.name }}" value="{{ values.get(input.name, '') }}">
+                        </div>
+                    {% else %}
+                        <input
+                            id="{{ input.name }}"
+                            type="{{ 'number' if input.type in ['number', 'integer'] else 'text' }}"
+                            {% if input.type == 'number' %}step="any"{% endif %}
+                            {% if input.type == 'integer' %}step="1"{% endif %}
+                            name="{{ input.name }}"
+                            value="{{ values.get(input.name, input.default if input.default is defined else '') }}"
+                            required
+                            placeholder="{{ input.placeholder }}"
+                        >
+                        {% if input.type == "vector" %}<small>Separate values with commas.</small>{% endif %}
+                        {% if input.type == "vectors" %}<small>Separate values with commas and vectors with semicolons.</small>{% endif %}
+                    {% endif %}
+                </div>
             {% endfor %}
 
             <button type="submit">Calculate</button>
@@ -35,7 +54,7 @@
         {% if result is not none %}
             <div class="result-card">
                 <h2>Answer</h2>
-                <p>{{ result }}</p>
+                <pre>{{ result }}</pre>
             </div>
         {% endif %}
 
@@ -59,7 +78,13 @@
 
             <h2>Topic</h2>
             <p>{{ topic }}</p>
+
+            {% if notes %}
+                <h2>Notes</h2>
+                <p>{{ notes }}</p>
+            {% endif %}
         </section>
     </main>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
 </body>
 </html>

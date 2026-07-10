@@ -10,7 +10,7 @@ def mean():
         topic="Arithmetic Mean"
     )
 
-def range():
+def range_value():
     return make_formula(
         "Range = max(x) - min(x)",
         {

@@ -13,7 +13,7 @@ def simplify_boolean_expression():
         notes="Accepts expressions using AND, OR, NOT, XOR, &, |, ~, and ^."
     )
 
-def truth_table():
+def format_truth_table():
     return make_formula(
         "F = expression(A, B, C, ...)",
         {
@@ -26,7 +26,7 @@ def truth_table():
         notes="Generates every input combination and evalutes the Boolean expression."
     )
 
-def karnaugh_map():
+def generate_kmap():
     return make_formula(
         "K=Map = truth table arranged in Gray code order",
         {
