@@ -1,10 +1,14 @@
 import json
 
 from flask import Flask, render_template, request
-from web_registry import MODULES, SOLVERS
+from website.web_registry import MODULES, SOLVERS
 from formulas.constant_values import CONSTANT_GROUPS
 
-app = Flask(__name__)
+app = Flask(
+    __name__,
+    template_folder="website/templates",
+    static_folder="website/static",
+)
 
 
 def get_value(obj, key, default=None):
@@ -153,4 +157,4 @@ def solver_page(module_id, solver_id):
 
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run()

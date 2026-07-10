@@ -1,44 +1,69 @@
-# Axiom v1.3.0
+# Axiom v2.0.0
 
-A modular STEM computation terminal built in Python.
+A modular, offline STEM computation toolkit built with Python and Flask.
 
-Axiom is a terminal-based STEM toolkit that provides quick access to mathematical formulas, engineering calculators, scientific constants, unit conversions, and digital electronics utilities through an organized modular interface.
+Axiom provides quick access to mathematical formulas, engineering calculators, scientific constants, unit conversions, digital electronics utilities, and matrix operations through both a terminal interface and a local website.
 
 ---
 
 ## Features
 
--  15+ STEM modules
--  260+ STEM formulas and utilities
--  Built-in formula explanations
--  Truth table generator
--  2–6 variable Karnaugh map generator
--  Boolean expression simplifier
--  Organized by subject
--  Fast terminal interface
--  Modular project structure
+- 15 STEM modules
+- 260 formula solvers and utilities
+- Local Flask website
+- Original terminal interface
+- Built-in formula explanations
+- Searchable scientific constants library
+- Dynamic matrix input generator
+- Vector and matrix operations
+- Calculus expression support
+- Statistical dataset calculations
+- Truth table generator
+- 2–6 variable Karnaugh map generator
+- Boolean expression simplifier
+- Modular project structure
+- Runs locally without an internet connection
 
 ---
 
 ## Modules
 
+- Aerospace Engineering
 - Algebra
+- Astronomy
 - Calculus
+- Chemistry
+- Computer Science
 - Constants
 - Conversions
+- Digital Electronics
+- Electrical Engineering
 - Geometry
+- Linear Algebra
+- Mechanical Engineering
 - Physics
 - Statistics
-- Linear Algebra
-- Chemistry
-- Astronomy
-- Computer Science
-- Electrical Engineering
-- Digital Electronics
-- Aerospace Engineering
-- Mechanical Engineering
 
-*More modules are planned.*
+More modules and utilities are planned.
+
+---
+
+## Axiom v2.0.0
+
+Version 2.0.0 introduces a complete Flask-based interface while preserving the original terminal toolkit.
+
+### Website Features
+
+- Automatically generated module and solver pages
+- Input fields based on formula parameters
+- Support for mathematical functions and expressions
+- Comma-separated statistical datasets
+- Boolean expression inputs
+- Dynamic matrix dimensions and input grids
+- Searchable constants reference page
+- Formula, variable, unit, topic, and note displays
+- Responsive dark interface
+- Local operation without external services
 
 ---
 
@@ -48,14 +73,65 @@ Axiom is a terminal-based STEM toolkit that provides quick access to mathematica
 Axiom/
 │
 ├── formulas/
+│   ├── algebra.py
+│   ├── calculus.py
+│   ├── constant_values.py
+│   ├── digital_electronics.py
+│   ├── linear_algebra.py
+│   └── ...
+│
 ├── formula_display/
-├── topic_lib/
+│   ├── core.py
+│   ├── display_algebra.py
+│   ├── display_calculus.py
+│   └── ...
+│
 ├── runners/
+│   ├── algebra_runner.py
+│   ├── calculus_runner.py
+│   └── ...
+│
+├── topic_lib/
+│   ├── menu.py
+│   ├── algebra_lib.py
+│   └── ...
+│
+├── website/
+│   ├── __init__.py
+│   ├── web_registry.py
+│   │
+│   ├── templates/
+│   │   ├── index.html
+│   │   ├── module.html
+│   │   ├── solver.html
+│   │   ├── constants.html
+│   │   └── about.html
+│   │
+│   └── static/
+│       ├── style.css
+│       └── script.js
+│
+├── app.py
 ├── main.py
-├── menu.py
 ├── sysinfo.py
-└── README.md
+├── README.md
+└── LICENSE
 ```
+
+---
+
+## Website Preview
+
+The website organizes every subject into its own module page. Each solver generates the appropriate inputs and displays its formula, variables, units, topic, and notes.
+
+Special interfaces support:
+
+- Matrices with custom row and column dimensions
+- Vectors and collections of vectors
+- Comma-separated statistical datasets
+- Calculus functions such as `x^2 + sin(x)`
+- Boolean expressions such as `(A AND B) OR NOT C`
+- Searchable scientific constants
 
 ---
 
@@ -64,11 +140,11 @@ Axiom/
 ```text
 ╔════════════════════════════════════════════╗
 ║                   AXIOM                    ║
-║               Version 1.3.0                ║
+║               Version 2.0.0                ║
 ╠════════════════════════════════════════════╣
-║ Status         : ONLINE                    ║
-║ Formula Modules: 14 Loaded                 ║
-║ Total Formulas : 260 Available             ║
+║ Status          : ONLINE                   ║
+║ Formula Modules : 14 Loaded                ║
+║ Total Formulas  : 260 Available            ║
 ║ Constant Library: Loaded                   ║
 ║ Formula Database: Ready                    ║
 ╠════════════════════════════════════════════╣
@@ -99,17 +175,34 @@ Axiom/
 ## Requirements
 
 - Python 3.14+
+- Flask
 - SymPy
 
-Install the required dependency:
+Install the required packages:
 
 ```bash
-pip install sympy
+python -m pip install flask sympy
 ```
 
 ---
 
-## Running
+## Running the Website
+
+From the main Axiom directory, run:
+
+```bash
+python app.py
+```
+
+Open the local address displayed in the terminal:
+
+```text
+http://127.0.0.1:5000
+```
+
+---
+
+## Running the Terminal Interface
 
 ```bash
 python main.py
@@ -119,34 +212,60 @@ python main.py
 
 ## Current Capabilities
 
-- Mathematical and scientific formula library
-- Scientific constants reference
+### Mathematics
+
+- Algebraic calculations
+- Derivatives and integrals
+- Limits and critical points
+- Statistical mean and range
+- Geometry calculations
+- Vector operations
+- Matrix operations and decompositions
+- Systems of linear equations
+
+### Science
+
+- Physics calculations
+- Chemistry calculations
+- Astronomy calculations
+- Scientific and mathematical constants
 - Unit conversions
+
+### Engineering
+
+- Aerospace engineering
+- Electrical engineering
+- Mechanical engineering
+- Digital electronics
+- Computer science utilities
+
+### Digital Electronics
+
 - Boolean expression simplification
 - Truth table generation
-- 2–6 variable Karnaugh map generation
-- Electrical engineering calculators
+- 2–6 variable Karnaugh maps
+- Support for `AND`, `OR`, `NOT`, `XOR`, `&`, `|`, `~`, and `^`
 
 ---
 
 ## Future Plans
 
-- More STEM modules
-- Additional unit conversions
 - Graphing support
-- Formula search
-- Favorites
-- Formula history
+- Formula favorites
+- Calculation history
 - Circuit analysis tools
-- Matrix visualizations
+- Enhanced matrix visualizations
+- Additional unit conversions
+- More STEM modules
 - Finance module
-
----
-
-*Aut viam inveniam aut faciam.*
+- Expanded formula search
 
 ---
 
 ## License
 
-MIT License
+Axiom is available under the MIT License.
+
+---
+
+*Aut viam inveniam aut faciam.*

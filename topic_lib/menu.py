@@ -19,7 +19,7 @@ def menu():
 
     border("╔", "═", "╗")
     centered("AXIOM")
-    centered("Version 1.2.0")
+    centered("Version 2.0.0")
     border("╠", "═", "╣")
 
     row(" Status", "ONLINE")
