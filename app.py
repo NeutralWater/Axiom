@@ -2,7 +2,6 @@ import json
 
 from flask import Flask, render_template, request
 from web_registry import MODULES, SOLVERS
-from formulas import constant_values
 from formulas.constant_values import CONSTANT_GROUPS
 
 app = Flask(__name__)
