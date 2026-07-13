@@ -38,6 +38,8 @@ def main():
         run_mechanical_engineering()
     elif choice == "0":
         return
+    elif choice == "16":
+        run_graphing()
     else:
         print("Invalid choice.")
 

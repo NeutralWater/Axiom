@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Graphing | Axiom</title>
+
+    <!-- Shared Axiom styling -->
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='style.css') }}"
+    >
+
+    <!-- Graphing-only styling -->
+    <link
+        rel="stylesheet"
+        href="{{ url_for('graphing.static', filename='graphing.css') }}"
+    >
+</head>
+
+<body>
+    <nav class="navbar">
+        <a class="nav-logo" href="/">Axiom</a>
+
+        <div class="nav-links">
+            <a href="/">Home</a>
+        </div>
+    </nav>
+
+    <main class="graphing-page">
+        <section class="graphing-header">
+            <div>
+                <p class="eyebrow">Axiom Graphing</p>
+
+                <h1>Graph functions.</h1>
+
+                <p class="page-description">
+                    Graph functions such as
+                    <code>x^2</code>,
+                    <code>sin(x)</code>, and
+                    <code>1 / x</code>.
+                </p>
+            </div>
+
+            <button id="downloadGraph" type="button">
+                Save PNG
+            </button>
+        </section>
+
+        <section class="graphing-workspace">
+            <aside class="expression-panel">
+                <div class="panel-heading">
+                    <h2>Expressions</h2>
+
+                    <button
+                        id="addExpression"
+                        class="icon-button"
+                        type="button"
+                        aria-label="Add expression"
+                    >
+                        +
+                    </button>
+                </div>
+
+                <div
+                    id="expressionRows"
+                    class="expression-rows"
+                ></div>
+
+                <div class="range-controls">
+                    <h2>Viewing Window</h2>
+
+                    <div class="range-inputs">
+                        <label>
+                            x minimum
+
+                            <input
+                                id="xMin"
+                                type="number"
+                                value="-10"
+                                step="any"
+                            >
+                        </label>
+
+                        <label>
+                            x maximum
+
+                            <input
+                                id="xMax"
+                                type="number"
+                                value="10"
+                                step="any"
+                            >
+                        </label>
+
+                        <label>
+                            y minimum
+
+                            <input
+                                id="yMin"
+                                type="number"
+                                value="-10"
+                                step="any"
+                            >
+                        </label>
+
+                        <label>
+                            y maximum
+
+                            <input
+                                id="yMax"
+                                type="number"
+                                value="10"
+                                step="any"
+                            >
+                        </label>
+                    </div>
+                </div>
+
+                <button
+                    id="graphButton"
+                    class="primary-button"
+                    type="button"
+                >
+                    Graph
+                </button>
+
+                <p
+                    id="graphStatus"
+                    class="graph-status"
+                    aria-live="polite"
+                ></p>
+            </aside>
+
+            <section class="plot-panel">
+                <div
+                    id="plot"
+                    aria-label="Interactive function graph"
+                ></div>
+            </section>
+        </section>
+    </main>
+
+    <script
+        src="{{ url_for('graphing.static', filename='vendor/plotly-basic.min.js') }}"
+    ></script>
+
+    <script
+        src="{{ url_for('graphing.static', filename='graphing.js') }}"
+    ></script>
+</body>
+</html>

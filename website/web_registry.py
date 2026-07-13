@@ -7,8 +7,43 @@ import formula_display
 from formulas.constant_values import CONSTANT_COUNT
 
 TEXT_PARAMETERS = {
-    "calculus": {"e", "expr", "expr1", "expr2", "outer", "inner", "value"},
-    "digital_electronics": {"e", "expression"},
+    "calculus": {
+        "e",
+        "expr",
+        "expr1",
+        "expr2",
+        "outer",
+        "inner",
+        "value",
+    },
+
+    "digital_electronics": {
+        "e",
+        "expression",
+    },
+
+    "computer_science": {
+        "binary",
+        "hex_num",
+        "octal",
+        "char",
+    },
+}
+
+
+INTEGER_PARAMETERS = {
+    "calculus": {
+        "iterations",
+    },
+
+    "statistics": {
+        "n",
+    },
+
+    "computer_science": {"decimal","a","b",
+        "n",
+        "code",
+    },
 }
 
 VECTOR_PARAMETERS = {
@@ -23,8 +58,6 @@ VECTOR_SET_PARAMETERS = {
 MATRIX_PARAMETERS = {
     "linear_algebra": {"A", "B"},
 }
-
-INTEGER_PARAMETERS = {"iterations", "n"}
 
 
 
@@ -46,6 +79,19 @@ def input_definition(module_id, parameter_name, parameter):
         elif module_id == "digital_electronics":
             placeholder = "Example: (A AND B) OR NOT C"
 
+        elif module_id == "computer_science":
+            examples = {
+                "binary": "Example: 1010101010101010",
+                "hex_num": "Example: FF00AA",
+                "octal": "Example: 755",
+                "char": "Example: A",
+            }
+
+            placeholder = examples.get(
+                parameter_name,
+                placeholder,
+            )
+
     elif parameter_name in MATRIX_PARAMETERS.get(module_id, set()):
         input_type = "matrix"
 
@@ -57,7 +103,7 @@ def input_definition(module_id, parameter_name, parameter):
         input_type = "vector"
         placeholder = "Example: 1, 2, 3"
 
-    elif parameter_name in INTEGER_PARAMETERS:
+    elif parameter_name in INTEGER_PARAMETERS.get(module_id, set()):
         input_type = "integer"
 
     data = {

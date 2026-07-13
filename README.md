@@ -4,6 +4,11 @@ A modular, offline STEM computation toolkit built with Python and Flask.
 
 Axiom provides quick access to mathematical formulas, engineering calculators, scientific constants, unit conversions, digital electronics utilities, and matrix operations through both a terminal interface and a local website.
 
+> [!NOTE]
+> Axiom v3.0.0 is currently in development. The upcoming release introduces
+> an interactive graphing workspace with multiple expressions, custom axis
+> ranges, pan, zoom, and PNG export.
+
 ---
 
 ## Features
@@ -23,6 +28,29 @@ Axiom provides quick access to mathematical formulas, engineering calculators, s
 - Boolean expression simplifier
 - Modular project structure
 - Runs locally without an internet connection
+- Interactive 2D graphing workspace *(v3 development preview)*
+- Multiple function plotting
+- Custom graph ranges
+- Pan, scroll zoom, and PNG export
+- Graphing access from both the terminal and website
+
+---
+## Graphing Preview
+
+Axiom's upcoming v3.0.0 release includes an interactive local graphing
+workspace powered by SymPy and Plotly.
+
+Currently supported:
+
+- Explicit functions such as `x^2`, `sin(x)`, and `sqrt(x)`
+- Multiple expressions on one graph
+- Custom x-axis and y-axis ranges
+- Mouse panning and scroll-wheel zooming
+- PNG export
+- Offline operation
+- Website and terminal launching
+
+3D graphing and additional graph types are planned.
 
 ---
 

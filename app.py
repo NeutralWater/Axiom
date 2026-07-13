@@ -3,11 +3,17 @@ import json
 from flask import Flask, render_template, request
 from website.web_registry import MODULES, SOLVERS
 from formulas.constant_values import CONSTANT_GROUPS
+from graphing import graphing_bp
 
 app = Flask(
     __name__,
     template_folder="website/templates",
     static_folder="website/static",
+)
+
+app.register_blueprint(
+    graphing_bp,
+    url_prefix="/graphing",
 )
 
 
