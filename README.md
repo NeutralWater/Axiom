@@ -169,9 +169,9 @@ Special interfaces support:
 ║                   AXIOM                    ║
 ║               Version 2.0.0                ║
 ╠════════════════════════════════════════════╣
-║ Status          : ONLINE                   ║
-║ Formula Modules : 14 Loaded                ║
-║ Total Formulas  : 260 Available            ║
+║ Status         : ONLINE                    ║
+║ Formula Modules: 14 Loaded                 ║
+║ Total Formulas : 260 Available             ║
 ║ Constant Library: Loaded                   ║
 ║ Formula Database: Ready                    ║
 ╠════════════════════════════════════════════╣
@@ -191,6 +191,7 @@ Special interfaces support:
 ║ [13] Digital Electronics                   ║
 ║ [14] Aerospace Engineering                 ║
 ║ [15] Mechanical Engineering                ║
+║ [16] Graphing                              ║
 ║                                            ║
 ║ [0] Exit                                   ║
 ║                                            ║
